@@ -5,26 +5,70 @@ body {
     font-size: 16px;
 }
 
+section {
+    padding: 0 2em;
+}
+
 nav {
     display: flex;
+    align-items: center;
+    border: 1px solid black;
+    margin: 0 0 4em 0;
+}
+
+nav>div>span {
+    display: none;
 }
 
 #logo {
     height: 45px;
     width: 45px;
-    background-color: red;
+    background: #FAB79C;
+    background: radial-gradient(at left top, #FAB79C, #AD1D1D);
     border-radius: 50%;
 }
 
-nav>span {
-    display: none;
+ul {
+    list-style-type: none;
+    padding: 0;
 }
 
 nav>ul {
-    list-style-type: none;
-
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
 }
 
-nav>ul>li {
-    display: inline-block;
+li {
+    margin: 0;
+    padding: 0;
+}
+
+.hero {
+    text-align: center;
+    border: 1px solid black;
+    padding: 0em 2em;
+}
+
+.hero>img {
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+}
+
+.social-links {
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    ;
+    border: 1px solid black;
+}
+
+.social-links li img {
+    height: 30px;
+    width: 30px;
+}
+
+article {
+    border: 1px solid black;
 }
