@@ -1,19 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap');
+
+html {
+    transition: all 0.2s ease-in-out;
+}
 
 body {
     font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 16px;
+    padding: 0 1.4em;
+    color: #666666;
 }
 
-section {
-    padding: 0 2em;
+footer {
+    color: #a3a3a3;
+    padding: 1em 0;
+    margin: 3em 0 0 0;
 }
 
 nav {
     display: flex;
     align-items: center;
-    border: 1px solid black;
+    padding: 1em 0em;
     margin: 0 0 4em 0;
 }
 
@@ -25,7 +34,7 @@ nav>div>span {
     height: 45px;
     width: 45px;
     background: #FAB79C;
-    background: radial-gradient(at left top, #FAB79C, #AD1D1D);
+    background: radial-gradient(at left top, #fe0151, #de229a);
     border-radius: 50%;
 }
 
@@ -47,8 +56,7 @@ li {
 
 .hero {
     text-align: center;
-    border: 1px solid black;
-    padding: 0em 2em;
+    padding: 0em 1em;
 }
 
 .hero>img {
@@ -61,8 +69,6 @@ li {
     padding: 0;
     display: flex;
     justify-content: space-around;
-    ;
-    border: 1px solid black;
 }
 
 .social-links li img {
@@ -70,6 +76,50 @@ li {
     width: 30px;
 }
 
+.projects {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4em
+}
+
 article {
+    background-color: #FAFAFA;
+    border-radius: 15px;
+    padding: 1em 2em 2em 2em;
+}
+
+article a {
     border: 1px solid black;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+    color: #a3a3a3;
+    transition: all 0.2s ease-in-out;
+}
+
+a:hover {
+    color: #FF474D;
+}
+
+.btn {
+    padding: 1em;
+    border: 1px solid #171717;
+    border-radius: 25px;
+    color: #171717;
+}
+
+.btn:hover {
+    background-color: #171717;
+    color: white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #171717;
 }
