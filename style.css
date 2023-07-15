@@ -1,6 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
 
 html {
     transition: all 0.2s ease-in-out;
@@ -30,12 +32,25 @@ nav>div>span {
     display: none;
 }
 
+nav>ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
 #logo {
     height: 45px;
     width: 45px;
     background: #FAB79C;
     background: radial-gradient(at left top, #fe0151, #de229a);
     border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.2em;
+    font-family: 'Abril Fatface', Georgia, 'Times New Roman', Times, serif;
+    box-shadow: rgba(50, 50, 93, 0.15) 0px 50px 100px -20px, rgba(0, 0, 0, 0.1) 0px 30px 60px -30px, rgba(10, 37, 64, 0.15) 0px -2px 6px 0px inset;
 }
 
 ul {
@@ -43,11 +58,7 @@ ul {
     padding: 0;
 }
 
-nav>ul {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-}
+
 
 li {
     margin: 0;
@@ -55,8 +66,25 @@ li {
 }
 
 .hero {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 0em 1em;
+}
+
+.hero div {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: 4em;
+    font-family: 'Libre Caslon Text', Georgia, 'Times New Roman', Times, serif;
+    margin: 0.5em 0 0.5em 0;
 }
 
 .hero>img {
@@ -67,29 +95,39 @@ li {
 
 .social-links {
     padding: 0;
+    margin: 1em 0 3em 0;
     display: flex;
     justify-content: space-around;
+    align-items: center;
+    width: 20em;
 }
 
-.social-links li img {
-    height: 30px;
-    width: 30px;
+.social-links i {
+    font-size: 1.5em;
 }
 
 .projects {
     display: flex;
     flex-direction: column;
-    gap: 1.4em
+    gap: 1.4em;
+}
+
+.project-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4em;
+    margin-bottom: 1.4em;
 }
 
 article {
     background-color: #FAFAFA;
     border-radius: 15px;
     padding: 1em 2em 2em 2em;
+    box-shadow: rgba(50, 50, 93, 0.1) 0px 50px 100px -20px, rgba(0, 0, 0, 0.1) 0px 30px 60px -30px, rgba(10, 37, 64, 0.15) 0px -2px 6px 0px inset;
 }
 
 article a {
-    border: 1px solid black;
+    padding: 1em 0;
 }
 
 a {
@@ -105,9 +143,9 @@ a:hover {
 
 .btn {
     padding: 1em;
-    border: 1px solid #171717;
     border-radius: 25px;
     color: #171717;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(94, 79, 135, 0.08) 0px 0px 0px 1px;
 }
 
 .btn:hover {
@@ -122,4 +160,77 @@ h4,
 h5,
 h6 {
     color: #171717;
+    font-weight: 600;
+}
+
+@media (min-width: 768px) {
+    nav {
+        max-width: 1024px;
+        margin: 0 auto;
+        margin-bottom: 4em;
+        justify-content: space-between;
+    }
+
+    nav>ul {
+        width: 500px;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .hero {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row-reverse;
+        gap: 8em;
+        margin: 0 0 4em 0;
+    }
+
+    .hero div {
+        text-align: left;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .hero>img {
+        height: 335px;
+        width: 335px;
+        border-radius: 50%;
+    }
+
+    .hero h1,
+    p,
+    ul {
+        width: 100%;
+    }
+
+    .social-links {
+        padding: 0;
+        margin: 1em 0 0 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: start;
+    }
+
+    .social-links i {
+        font-size: 1.5em;
+    }
+
+    main {
+        max-width: 1024px;
+        margin: 0 auto;
+    }
+
+    .projects {
+        display: flex;
+        gap: 1.4em;
+    }
+
+    .project-cards {
+        display: flex;
+        gap: 1.4em;
+        margin-bottom: 1.6em;
+    }
 }
