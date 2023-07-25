@@ -88,8 +88,8 @@ li {
 }
 
 .hero>img {
-    height: 120px;
-    width: 120px;
+    height: 140px;
+    width: 140px;
     border-radius: 50%;
 }
 
@@ -142,6 +142,7 @@ a:hover {
 }
 
 .btn {
+    position: relative;
     padding: 1em;
     border-radius: 25px;
     color: #171717;
@@ -151,6 +152,7 @@ a:hover {
 .btn:hover {
     background-color: #171717;
     color: white;
+
 }
 
 h1,
@@ -210,8 +212,7 @@ h6 {
         padding: 0;
         margin: 1em 0 0 0;
         display: flex;
-        justify-content: space-around;
-        align-items: start;
+        width: 100%;
     }
 
     .social-links i {
