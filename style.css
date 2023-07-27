@@ -212,7 +212,7 @@ h6 {
         padding: 0;
         margin: 1em 0 0 0;
         display: flex;
-        width: 100%;
+        width: 80%;
     }
 
     .social-links i {
@@ -231,7 +231,25 @@ h6 {
 
     .project-cards {
         display: flex;
+        flex-direction: row;
         gap: 1.4em;
         margin-bottom: 1.6em;
+    }
+
+    article {
+        width: 33%;
+        display: grid;
+    }
+
+    article p {
+        margin: 0 0 1em 0;
+    }
+
+    article h3 {
+        margin: 1em 0 1em 0;
+    }
+
+    article a {
+        align-self: end;
     }
 }
