@@ -12,13 +12,18 @@ body {
     font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 16px;
     padding: 0 1.4em;
+    margin-bottom: 0;
     color: #666666;
 }
 
 footer {
+    display: flex;
+    align-items: center;
     color: #a3a3a3;
-    padding: 1em 0;
+    padding: 1.5em 0;
     margin: 3em 0 0 0;
+    border-top: 1px solid #e0e0e0;
+    font-size: 13px;
 }
 
 nav {
@@ -42,7 +47,7 @@ nav>ul {
     height: 45px;
     width: 45px;
     background: #FAB79C;
-    background: radial-gradient(at left top, #fe0151, #de229a);
+    background-image: linear-gradient(140deg, #ff7e5f, #FF474D);
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -51,6 +56,11 @@ nav>ul {
     font-size: 1.2em;
     font-family: 'Abril Fatface', Georgia, 'Times New Roman', Times, serif;
     box-shadow: rgba(50, 50, 93, 0.15) 0px 50px 100px -20px, rgba(0, 0, 0, 0.1) 0px 30px 60px -30px, rgba(10, 37, 64, 0.15) 0px -2px 6px 0px inset;
+    transition: transform 0.3s ease-in-out;
+}
+
+#logo:hover {
+    transform: translateY(-5px);
 }
 
 ul {
@@ -84,7 +94,7 @@ li {
 .hero h1 {
     font-size: 4em;
     font-family: 'Libre Caslon Text', Georgia, 'Times New Roman', Times, serif;
-    margin: 0.5em 0 0.5em 0;
+    margin: 0.5em 0;
 }
 
 .hero>img {
@@ -95,11 +105,10 @@ li {
 
 .social-links {
     padding: 0;
-    margin: 1em 0 3em 0;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 20em;
+    margin: 1em 0 2em 0;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    width: 100%;
 }
 
 .social-links i {
@@ -155,6 +164,29 @@ a:hover {
 
 }
 
+.btn-socials {
+    height: 36px;
+    color: #000;
+    white-space: nowrap;
+    cursor: pointer;
+    background-color: #fff;
+    border: 1px rgba(0, 0, 0, .04);
+    border-radius: 6px;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1em;
+    font-size: 13px;
+    text-decoration: none;
+    transition: all .3s;
+    display: flex;
+    gap: 0.5em;
+    box-shadow: inset 0 -3px 4px -1px rgba(0, 0, 0, .04), 0 2px 5px rgba(221, 150, 150, .04), 0 4px 4px rgba(0, 0, 0, .02), 0 0 0 1px rgba(0, 0, 0, .09);
+}
+
+.btn-socials:hover {
+    box-shadow: inset 0 -3px 4px -1px rgba(0, 0, 0, .09), 0 2px 5px rgba(0, 0, 0, .13), 0 4px 4px rgba(0, 0, 0, .02), 0 0 0 1px rgba(0, 0, 0, .09);
+}
+
 h1,
 h2,
 h3,
@@ -165,21 +197,68 @@ h6 {
     font-weight: 600;
 }
 
-/*ABOUT SECTION*/
+p {
+    line-height: 162.5%;
+}
+
+/******* 
+START ABOUT SECTION 
+*********/
 
 .about-main {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-gap: 6em;
+
 }
 
 .about-main img {
-    max-width: 30em;
+    max-width: 100%;
     border-radius: 15px;
 }
 
 .about-main blockquote {
-    grid-column-start: 2;
+    line-height: 162.5%;
+    border-left: 1px solid #e0e0e0;
+    margin: 2em 0;
+    padding: 0 2em;
+    font-style: italic;
+    font-weight: 100;
+    font-family: 'IBM Plex Mono';
+    font-size: 0.8em;
 }
+
+#about-quote {
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 2em;
+    left: -3.2em;
+    background-color: white;
+}
+
+.about-main ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1.2em;
+    font-size: 0.8em;
+    font-family: 'IBM Plex Mono', 'Courier New', Courier, monospace;
+}
+
+.interests ul {
+    display: grid;
+    grid-gap: 1em;
+    margin: 1em 0 2em 0;
+}
+
+/******
+START DESKTOP MEDIA QUERIES 
+*******/
 
 @media (min-width: 768px) {
     nav {
@@ -227,8 +306,9 @@ h6 {
     .social-links {
         padding: 0;
         margin: 1em 0 0 0;
-        display: flex;
-        width: 80%;
+        font-size: 14px;
+        grid-template-columns: repeat(5, 30px);
+        gap: 2em;
     }
 
     .social-links i {
@@ -267,5 +347,9 @@ h6 {
 
     article a {
         align-self: end;
+    }
+
+    .btn-socials {
+        max-width: 10em;
     }
 }
