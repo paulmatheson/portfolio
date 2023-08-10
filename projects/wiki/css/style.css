@@ -1,0 +1,128 @@
+body {
+	
+	padding-bottom: 1rem;
+	background-color: #042608;
+	background-size: cover;
+    text-shadow: 0px 3px 2px rgba(0,0,0,0.1),
+	                 5px 6px 3px rgba(0,0,0,0.05),
+	                 -5px 7px 2px rgba(0,0,0,0.02);
+}
+
+.navbar {
+	background-color: rgba(235, 235, 235, 0.6) !important;
+	height: 40px !important;
+	border-bottom: none !important;
+}
+
+.navbar a {
+	color: #888 !important;
+	text-shadow: none !important;
+}
+
+h1 {
+	color: white !important;
+	
+}
+
+h4 {
+	transition: all 0.3s;
+}
+
+a {
+	color: white !important;
+}
+
+.content {
+	margin-top: 14rem;
+}
+
+#random-btn {
+	margin-right: 1rem !important; 
+	margin-left: 1rem !important;
+}
+
+#new-search-btn {
+	margin-bottom: 1rem !important; 
+	margin-top: 1rem !important;
+}
+
+.listing {
+	color: white;
+	padding: 1.5rem;
+	margin-bottom: 1rem;
+	background-color:rgba(0, 0, 0, 0.7);
+	cursor: pointer;
+	border-radius: 15px;;
+	transition: all 0.3s;
+	box-shadow: 0px 2px 1px rgba(0,0,0,0.1),
+	                 3px 4px 2px rgba(0,0,0,0.01),
+	                 -2px 5px 2px rgba(0,0,0,0.01);
+}
+
+.listing:hover {
+	background-color:rgba(0, 0, 0, 0.9);
+}
+
+.listing:hover h4 {
+	text-decoration: underline;
+}
+
+button a {
+	color: #000;
+}
+
+#info {
+	margin-top: 0rem;
+}
+
+#about {
+	margin-top: 1rem;
+	padding-top: 1.2rem;
+	padding-bottom: .4rem;
+	display: none;
+	color: white;
+	background-color:rgba(0, 0, 0, 0.7);
+	border-radius: 10px;;
+	box-shadow: 0px 2px 1px rgba(0,0,0,0.1),
+	                 3px 4px 2px rgba(0,0,0,0.01),
+	                 -2px 5px 2px rgba(0,0,0,0.01);
+
+}
+
+#about a {
+	color: #FCA699 !important;
+}
+
+#about-btn {
+	padding: 0 !important;
+	margin-top: 1rem;
+	color: white !important;
+}
+
+form {
+	box-shadow: 0px 2px 1px rgba(0,0,0,0.1),
+	                 3px 4px 2px rgba(0,0,0,0.01),
+	                 -2px 5px 2px rgba(0,0,0,0.01);
+}
+
+.form-control {
+	font-size: 16px !important;
+}
+
+#search-bar {
+	margin-bottom: 2rem;
+}
+
+button {
+	box-shadow: 0px 2px 1px rgba(0,0,0,0.1),
+	                 3px 4px 2px rgba(0,0,0,0.01),
+	                 -2px 5px 2px rgba(0,0,0,0.01);
+}
+
+button:focus {
+	outline: none !important;
+}
+
+#output-div {
+	display: none;
+}

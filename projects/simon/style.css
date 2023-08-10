@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css?family=Orbitron:400,700');
+@import url('https://fonts.googleapis.com/css?family=Play:400,700');
+
+body {
+	background-color: #2b535a;
+	color: white;
+	font-family: Arial;
+}
+
+.container {
+	margin: 0 auto;
+	text-align: center;
+}
+
+.gameboard {
+	margin: 0 auto;
+	margin-top: 50px;
+	height: 520px;
+	width: 520px;
+	background-color: #111;
+	border: solid 4px #222;
+	border-radius: 600px;
+}
+
+.middle-console {
+	margin-left: 138px;
+	margin-top: 138px;
+	width: 225px;
+	height: 225px;
+	font-size: 10px;
+	background-color: #555;
+	border: solid 10px #111;
+	border-radius: 50%;
+	position: absolute;
+	z-index: 8;
+}
+
+.controls {
+	display: flex;
+	justify-content: space-around;
+	padding-right: 0px;
+	padding-left: 25px;
+	text-align: center;
+}
+
+.controls-bottom {
+	display: flex;
+	justify-content: space-around;
+	padding-right: 14px;
+	padding-left: 29px;
+}
+
+.controls-bottom span:nth-child(3) {
+	position: relative;
+	right: 10px;
+}
+
+.title {
+	margin-top: 54px;
+	margin-bottom: 5px;
+	font-family: 'Exo 2';
+	font-size: 50px;
+	text-transform: uppercase;
+	font-weight: bold;
+	color: white;
+}
+
+.label {
+	font-family: 'Play';
+}
+
+.inline {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.display {
+	position: relative;
+	right: 3px;
+	bottom: 2px;
+	width: 50px;
+	height: 22px;
+	padding-top: 8px;
+	border: solid 1px black;
+	font-family: 'Orbitron';
+	font-size: 20px;
+	background-color: hsl(354, 25%, 10%);
+	margin: 0 auto;
+}
+
+.count {
+	color: hsl(354, 88%, 52%);
+	opacity: 0.1;
+}
+
+.start, .strict {
+	margin: 0 auto;
+	margin-top: 0px;
+	margin-bottom: 15px;
+	text-align: center;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background-color: #555;
+	cursor: pointer;
+}
+
+.start {
+	background-color: red;
+	border: 4px solid #222;
+	position: relative;
+	right: 4px;
+}
+
+.strict {
+	background-color: yellow;
+	border: 4px solid #222;
+	position: relative;
+	right: 1px;
+}
+
+.strict-light {
+	width: 6px;
+	height: 6px;
+	background: #201314;
+	border: 2px solid hsl(354, 25%, 10%);
+	border-radius: 50%;
+	position: relative;
+	right: 10px;
+}
+
+.switch {
+  position: relative;
+  margin-top: 14px;
+  display: inline-block;
+  width: 40px;
+  height: 25px;
+}
+
+.switch input {
+	display: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #222;
+  -webkit-transition: .4s;
+  transition: .2s;
+  border-radius: 5px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 17px;
+  width: 16px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+input:checked + .slider {
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(16px);
+  -ms-transform: translateX(16px);
+  transform: translateX(16px);
+}
+
+.switch-label {
+	margin-right: 5px;
+	margin-left: 5px;
+	position: relative;
+	bottom: 8px;
+}
+
+.game-btn {
+	margin: 0;
+	float: left;
+	position: relative;
+	width: 240px;
+	height: 240px;
+	border: solid 10px #222;
+	outline: none;
+	cursor: pointer;
+}
+
+.unclickable {
+	cursor: auto !important;
+}
+
+.green {
+	background-color: hsl(103, 40%, 38%);
+	border-radius: 300px 0 0 0;
+}
+
+.green-highlight {
+	background-color: hsla(103, 62%, 55%, 1) !important;
+	border-radius: 300px 0 0 0 !important;
+}
+
+.red {
+	background-color: hsl(354, 68%, 38%);
+	border-radius: 0 300px 0 0;
+}
+
+.red-highlight {
+	background-color: hsla(354, 100%, 60%, 1) !important;
+	border-radius: 0 300px 0 0;
+}
+
+.yellow {
+	background-color: hsl(52, 78%, 38%);
+	border-radius: 0 0 0 300px;
+}
+
+.yellow-highlight {
+	background-color: hsla(52, 95%, 57%, 1) !important;
+	border-radius: 0 0 0 300px;
+}
+
+.blue {
+	background-color: hsl(210, 62%, 38%);
+	border-radius: 0 0 300px 0;
+}
+
+.blue-highlight {
+	background-color: hsla(210, 100%, 60%, 1) !important;
+	border-radius: 0 0 300px 0;
+}

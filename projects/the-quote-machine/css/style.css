@@ -1,0 +1,105 @@
+@media (max-width: 767px) {
+  .fill {
+  	padding-top: 20px !important;
+  }
+}
+
+body {
+	font-family: 'Libre Franklin', serif !important;
+	transition: background-color 1s ease-in-out;
+}
+
+.navbar-default {
+	background-color: rgba(235, 235, 235, 0.3) !important;
+	border-bottom: none !important;
+
+}
+
+.navbar a {
+	color: #333 !important;
+}
+
+.navbar a:link {
+	text-decoration: none;
+	font-size: 1.4rem;
+}
+
+.fill {
+	min-height: 100% !important;
+	width: 100% !important;
+	position: absolute;
+	padding-top: 80px;
+}
+
+#title {
+	margin-bottom: 20px;
+	color: white;
+}
+
+#quote-display {
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	padding: 30px 40px 30px 40px;
+	background-color: #FFF;
+	border-radius: 5px;
+}
+
+#quote {
+	font-size: 2.6rem !important;
+	font-weight: 700
+	padding-bottom: 10px;
+}
+
+#author {
+	padding-bottom: 10px;
+	font-size: 1.8rem !important;
+	font-weight: 300;
+}
+
+#quote-xs {
+	font-size: 1.8rem !important;
+	font-weight: 700
+	padding-bottom: 10px;
+}
+
+#author-xs {
+	padding-bottom: 0px;
+	font-size: 1.4rem !important;
+	font-weight: 300;
+}
+
+button {
+    border: none !important;
+    color: white !important;
+    text-decoration: none;
+    font-size: 1.4rem;
+    outline: none !important;
+}
+
+button:hover {
+	box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.1);
+}
+
+h4 {
+	
+}
+
+p {
+	color: white;
+	font-size: 1.2rem;
+}
+
+a {
+	color: white !important;
+}
+
+a:link {
+	color: white !important;
+	font-size: 1.2rem;
+	text-decoration: underline;
+}
+
+.clickable-div {
+	cursor: pointer;
+}
