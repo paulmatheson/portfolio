@@ -1,4 +1,4 @@
 # Ignore projects.js file
-projects.js
+projects/
 
 **/*.psd
