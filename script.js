@@ -22,39 +22,39 @@ const projects = [
     },
     {
         title: "Pomodoro Timer",
-        description: "",
-        link: "#",
+        description: "An easy to use and interactive Pomodoro Technique Timer.",
+        link: "https://codepen.io/illpill/full/PQBbao/",
         tech: [],
         img: ""
     },
     {
+        title: "Wikipedia Viewer",
+        description: "An app built to search wikipedia. Built as part of my freeCodeCamp coursework.",
+        link: "projects/wa/weather-app.html",
+        tech: [],
+        img: ""
+    }
+    {
         title: "Quote Machine",
-        description: "",
-        link: "#",
+        description: "A random quote generator.",
+        link: "projects/the-quote-machine/quote-machine.html",
         tech: [],
         img: ""
     },
     {
         title: "Pong",
-        description: "",
-        link: "#",
+        description: "Play my version of one of the first video games ever created",
+        link: "projects/pong/pong.html",
         tech: [],
         img: ""
     },
     {
         title: "Simon Says",
-        description: "",
-        link: "#",
+        description: "Play the classic Simon game. See if you can make it to 20!",
+        link: "projects/simon/simon.html",
         tech: [],
         img: ""
-    },
-    {
-        title: "Markdown previewer",
-        description: "",
-        link: "#",
-        tech: [],
-        img: ""
-    },
+    }
 ];
 
 const hmProjList = document.getElementById('hm-project-cards');
