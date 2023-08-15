@@ -33,7 +33,7 @@ const projects = [
         link: "projects/wa/weather-app.html",
         tech: [],
         img: ""
-    }
+    },
     {
         title: "Quote Machine",
         description: "A random quote generator.",
@@ -65,7 +65,7 @@ if (hmProjList !== null) {
         let article = document.createElement('article')
         let project = projects[i]
         article.innerHTML = `
-            <h2>${project.title}</h2>
+            <h3>${project.title}</h3>
             <p>${project.description}</p>
             <a href="${project.link}">Open Project</a>
         `
