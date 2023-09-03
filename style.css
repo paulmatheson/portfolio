@@ -27,9 +27,9 @@
 }
 
 [data-theme="dark"] {
-    --bg-color: #010314;
+    --bg-color: #020418;
     --bg-gradient: radial-gradient(circle,
-            #010314 0%,
+            #020418 0%,
             rgb(7, 7, 43) 100%);
     --font-color: #d3d3d3;
     --font-faded: #a5a5a5;
@@ -61,6 +61,7 @@ body {
     color: var(--font-color);
     background: var(--bg-color);
     background: var(--bg-gradient);
+    transition: all 0.05s ease-in;
 }
 
 main {
