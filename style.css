@@ -3,6 +3,52 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Chivo:wght@600&display=swap');
 
+:root {
+    --bg-color: hsla(229, 44%, 95%, 1);
+    --bg-gradient: radial-gradient(circle,
+            rgba(171, 148, 254, 0.116) 0%,
+            hsla(240, 25%, 98%, 1) 100%);
+    --font-color: #666;
+    --font-faded: #a3a3a3;
+    --font-bold: #171717;
+    --card-bg: #FAFAFA;
+    --card-border: 0px solid white;
+    --card-box-shadow:
+        rgba(50, 50, 93, 0.05) 0px 50px 100px -20px,
+        rgba(0, 0, 0, 0.05) 0px 30px 60px -30px,
+        rgba(10, 37, 64, 0.12) 0px -2px 6px 0px inset;
+    --btn-font-color: #171717;
+    --btn-bg-hover: #171717;
+    --btn-font-color-hover: white;
+    --btn-border: 1px solid #e3e3e3;
+    --btn-box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(94, 79, 135, 0.08) 0px 0px 0px 1px;
+    --link-font-color-hover: #FF474D;
+    --border-footer: 1px solid #e0e0e0;
+}
+
+[data-theme="dark"] {
+    --bg-color: #010314;
+    --bg-gradient: radial-gradient(circle,
+            #010314 0%,
+            rgb(7, 7, 43) 100%);
+    --font-color: #d3d3d3;
+    --font-faded: #a5a5a5;
+    --font-bold: #eaeaea;
+    --card-bg: rgba(0, 0, 0, 0);
+    --card-border: 1px solid #303852;
+    --card-box-shadow:
+        rgba(50, 50, 93, 0.05) 0px 50px 100px -20px,
+        rgba(0, 0, 0, 0.05) 0px 30px 60px -30px,
+        rgba(10, 37, 64, 0.12) 0px -2px 6px 0px inset;
+    --btn-font-color: #ffffff;
+    --btn-bg-hover: rgba(255, 71, 77, 0.8);
+    --btn-border: 1px solid #ffffff7a;
+    --btn-border-hover: 1px solid rgba(179, 32, 66, 0.5);
+    --btn-box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(94, 79, 135, 0.08) 0px 0px 0px 1px;
+    --link-font-color-hover: #FF474D;
+    --border-footer: 1px solid #e0e0e049;
+}
+
 html {
     transition: all 0.2s ease-in-out;
 }
@@ -12,12 +58,9 @@ body {
     font-size: 16px;
     padding: 0 1.4em;
     margin-bottom: ;
-    color: #666666;
-    background: hsla(229, 44%, 95%, 1);
-    background:
-        radial-gradient(circle,
-            rgba(171, 148, 254, 0.116) 0%,
-            hsla(240, 25%, 98%, 1) 100%);
+    color: var(--font-color);
+    background: var(--bg-color);
+    background: var(--bg-gradient);
 }
 
 main {
@@ -28,9 +71,9 @@ main {
 footer {
     display: flex;
     align-items: center;
-    color: #a3a3a3;
+    color: var(--font-faded);
     padding: 1.5em 0;
-    border-top: 1px solid #e0e0e0;
+    border-top: var(--border-footer);
     font-size: 13px;
 }
 
@@ -50,6 +93,15 @@ nav>ul {
     width: 100%;
     display: flex;
     justify-content: space-around;
+}
+
+nav input {
+    display: none;
+}
+
+.theme-switch {
+    cursor: pointer;
+    font-size: 1.2em;
 }
 
 #logo {
@@ -155,14 +207,13 @@ li {
 }
 
 article {
-    background-color: #FAFAFA;
+    background-color: var(--card-bg);
     border-radius: 15px;
     padding: 1em 2em 2em 2em;
-    box-shadow:
-        rgba(50, 50, 93, 0.05) 0px 50px 100px -20px,
-        rgba(0, 0, 0, 0.05) 0px 30px 60px -30px,
-        rgba(10, 37, 64, 0.12) 0px -2px 6px 0px inset;
+    border: var(--card-border);
+    box-shadow: var(--card-box-shadow)
 }
+
 
 article a {
     padding: 1em 0;
@@ -176,21 +227,22 @@ a {
 }
 
 a:hover {
-    color: #FF474D;
+    color: var(--link-font-color-hover);
 }
 
 .btn {
     position: relative;
     padding: 1em;
     border-radius: 25px;
-    color: #171717;
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(94, 79, 135, 0.08) 0px 0px 0px 1px;
+    color: var(--btn-font-color);
+    border: var(--btn-border);
+    box-shadow: var(--btn-box-shadow)
 }
 
 .btn:hover {
-    background-color: #171717;
-    color: white;
-
+    background-color: var(--btn-bg-hover);
+    color: var(--btn-font-color-hover);
+    border: var(--btn-border-hover)
 }
 
 .btn-socials {
@@ -222,7 +274,7 @@ h3,
 h4,
 h5,
 h6 {
-    color: #171717;
+    color: var(--font-bold);
     font-weight: 600;
 }
 
@@ -328,7 +380,7 @@ START DESKTOP MEDIA QUERIES
         justify-content: center;
         flex-direction: row-reverse;
         gap: 8em;
-        margin: 0 0 4em 0;
+        margin: 0 0 3em 0;
     }
 
     .hero div {
