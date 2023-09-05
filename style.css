@@ -81,7 +81,7 @@ footer {
 nav {
     display: flex;
     align-items: center;
-    padding: 1em 0em;
+    padding: 1em 1em;
     margin: 0 0 4em 0;
     width: 100%;
 }
@@ -160,7 +160,6 @@ li {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0em 1em;
 }
 
 .hero div {
@@ -381,12 +380,16 @@ START DESKTOP MEDIA QUERIES
         margin: 0 auto;
     }
 
+    section {
+        padding: 0 1em;
+    }
+
     .hero {
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: row-reverse;
-        gap: 8em;
+        gap: 6em;
         margin: 0 0 3em 0;
     }
 
