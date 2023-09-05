@@ -34,7 +34,7 @@
     --font-color: #d3d3d3;
     --font-faded: #a5a5a5;
     --font-bold: #eaeaea;
-    --card-bg: rgba(0, 0, 0, 0);
+    --card-bg: rgba(44, 46, 75, 0.35);
     --card-border: 1px solid #303852;
     --card-box-shadow:
         rgba(50, 50, 93, 0.05) 0px 50px 100px -20px,
@@ -94,6 +94,7 @@ nav>ul {
     width: 100%;
     display: flex;
     justify-content: space-around;
+    padding-left: 1em;
 }
 
 nav input {
@@ -229,6 +230,11 @@ a {
 
 a:hover {
     color: var(--link-font-color-hover);
+}
+
+a>i {
+    padding-left: 0.2em;
+    font-size: 14px;
 }
 
 .btn {
