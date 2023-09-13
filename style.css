@@ -24,6 +24,7 @@
     --btn-box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(94, 79, 135, 0.08) 0px 0px 0px 1px;
     --link-font-color-hover: #FF474D;
     --border-footer: 1px solid #e0e0e0;
+    --transition-std: all 0.25s ease-in-out;
 }
 
 [data-theme="dark"] {
@@ -50,7 +51,7 @@
 }
 
 html {
-    transition: all 0.2s ease-in-out;
+    transition: var(--transition-std);
 }
 
 body {
@@ -127,7 +128,7 @@ nav input {
         rgba(255, 126, 95, 0.2) 0px 0px 0px 9px,
         rgba(255, 126, 95, 0.1) 0px 0px 0px 12px,
         rgba(255, 126, 95, 0.05) 0px 0px 0px 15px;
-    transition: all 0.3s ease-in-out;
+    transition: var(--transition-std);
 }
 
 #logo:hover {
@@ -141,6 +142,7 @@ nav input {
 }
 
 #logo i {
+    color: white;
     font-size: 12px;
     text-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
 }
@@ -220,14 +222,16 @@ article a {
     padding: 1em 0;
 }
 
-a {
+a,
+i {
     cursor: pointer;
     text-decoration: none;
     color: #a3a3a3;
-    transition: all 0.2s ease-in-out;
+    transition: var(--transition-std);
 }
 
-a:hover {
+a:hover,
+i:hover {
     color: var(--link-font-color-hover);
 }
 
@@ -264,7 +268,7 @@ a>i {
     padding: 0 1em;
     font-size: 13px;
     text-decoration: none;
-    transition: all .3s;
+    transition: var(--transition-std);
     display: flex;
     gap: 0.5em;
     box-shadow: inset 0 -3px 4px -1px rgba(0, 0, 0, .04), 0 2px 5px rgba(221, 150, 150, .04), 0 4px 4px rgba(0, 0, 0, .02), 0 0 0 1px rgba(0, 0, 0, .09);
