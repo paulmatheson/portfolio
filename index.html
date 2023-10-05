@@ -24,16 +24,13 @@
         <ul>
             <li><a href="about.html">About</a></li>
             <li><a href="projects.html">Projects</a></li>
-            <li><a href="blog.html">Writing</a></li>
-
-            <!-- Dark Mode Switch -->
-            <div class="theme-switch-wrapper">
-                <label class="theme-switch" for="checkbox">
-                    <input type="checkbox" id="checkbox" />
-                    <i id="theme-switch-btn" class="fa-solid fa-sun"></i>
-                </label>
-            </div>
+            <li><a href="blog/">Writing</a></li>
         </ul>
+        <div id="theme-toggle-switch">
+            <ion-icon name="sunny-outline"></ion-icon>
+            <input type="checkbox" id="switch" /><label class="theme-switch" for="switch">Toggle</label>
+            <ion-icon name="moon-outline"></ion-icon>
+        </div>
     </nav>
     <main>
         <section class="hero">
@@ -103,7 +100,8 @@
 
         gtag('config', 'UA-96084045-1');
     </script>
-
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
 </body>
 

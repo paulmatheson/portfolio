@@ -86,34 +86,32 @@ if (projectList !== null) {
     });
 }
 
-const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
-const toggleBtn = document.getElementById('theme-switch-btn')
+const toggleSwitch = document.getElementById('switch') // assign input element to variable
+const themeIcon = document.getElementById('theme-switch-icon') // 
 
 function switchTheme(e) {
     if (e.target.checked) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark'); //add this
-        toggleBtn.classList.remove('fa-sun')
-        toggleBtn.classList.add('fa-moon')
+        document.documentElement.setAttribute('data-theme', 'dark') // Sets the "data-theme" attribute of the root element to "dark"
+        localStorage.setItem('theme', 'dark') // Saves preferences in local storage
+        toggleBtn.classList.remove('fa-sun') // Removes the sun icon
+        toggleBtn.classList.add('fa-moon') // Adds moon icon
     }
     else {
-        document.documentElement.setAttribute('data-theme', 'light');
-        localStorage.setItem('theme', 'light'); //add this
-        toggleBtn.classList.remove('fa-moon')
-        toggleBtn.classList.add('fa-sun')
+        document.documentElement.setAttribute('data-theme', 'light') // Sets the "data-theme" attribute of the root element to "light"
+        localStorage.setItem('theme', 'light') // Saves preferences in local storage
+        toggleBtn.classList.remove('fa-moon') // Removes moon icon
+        toggleBtn.classList.add('fa-sun') // Adds sun icon
     }
 }
 
 toggleSwitch.addEventListener('change', switchTheme, false);
 
-const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
-console.log(currentTheme)
-
+const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null; // Checks if theme saved in local storage and what it is set to; null if not saved
 if (currentTheme) {
-    document.documentElement.setAttribute('data-theme', currentTheme);
+    document.documentElement.setAttribute('data-theme', currentTheme) // If yes, sets the document to the user preferences
 
     if (currentTheme === 'dark') {
-        toggleSwitch.checked = true;
+        toggleSwitch.checked = true
         toggleBtn.classList.remove('fa-sun')
         toggleBtn.classList.add('fa-moon')
     }
