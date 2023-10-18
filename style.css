@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Chivo:wght@600&display=swap');
@@ -56,9 +56,10 @@ html {
 
 body {
     font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 300;
     font-size: 16px;
     padding: 0 1.4em;
-    margin-bottom: ;
+    letter-spacing: 0.2px;
     color: var(--font-color);
     background: var(--bg-color);
     background: var(--bg-gradient);
@@ -87,15 +88,22 @@ nav {
     width: 100%;
 }
 
-nav>div>span {
-    display: none;
+nav a {
+    display: flex;
+    align-items: center;
+    gap: 0.7em
 }
 
-nav>ul {
+nav div {
+    display: flex;
+}
+
+nav ul {
     width: 100%;
     display: flex;
     justify-content: space-around;
     padding-left: 1em;
+    gap: 2.5em;
 }
 
 nav input[type=checkbox] {
@@ -109,13 +117,26 @@ nav input[type=checkbox] {
     flex-direction: row;
     align-items: center;
     gap: 10px;
-    font-size: 1.2em;
+    font-size: 1.1em;
+
 }
+
+#theme-toggle-switch ion-icon:first-of-type {
+    position: relative;
+    left: 34px;
+}
+
+#theme-toggle-switch ion-icon:last-of-type {
+    position: relative;
+    left: -34px;
+    z-index: -1;
+}
+
 
 label {
     cursor: pointer;
     text-indent: -9999px;
-    width: 60px;
+    width: 70px;
     height: 30px;
     background: rgba(128, 128, 128, 0);
     display: block;
@@ -131,7 +152,7 @@ label:after {
     left: 1px;
     width: 25px;
     height: 25px;
-    background: #fff;
+    background: #ffffff21;
     border-radius: 90px;
     border: 1.5px solid rgba(151, 148, 148, 0.3);
     transition: 0.3s;
@@ -156,46 +177,6 @@ label:active:after {
 .theme-switch {
     cursor: pointer;
     font-size: 1.2em;
-}
-
-#logo {
-    height: 25px;
-    width: 25px;
-    background: #FAB79C;
-    background-image: linear-gradient(140deg, rgb(255, 126, 95), #FF474D);
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 1.2em;
-    font-family: 'Abril Fatface', Georgia, 'Times New Roman', Times, serif;
-    /*box-shadow: rgba(50, 50, 93, 0.15) 0px 50px 100px -20px,
-        rgba(0, 0, 0, 0.1) 0px 30px 60px -30px,
-        rgba(10, 37, 64, 0.15) 0px -2px 6px 0px inset;*/
-    box-shadow:
-        rgba(255, 126, 95, 0.4) 0px 0px 0px 3px,
-        rgba(255, 126, 95, 0.3) 0px 0px 0px 6px,
-        rgba(255, 126, 95, 0.2) 0px 0px 0px 9px,
-        rgba(255, 126, 95, 0.1) 0px 0px 0px 12px,
-        rgba(255, 126, 95, 0.05) 0px 0px 0px 15px;
-    transition: var(--transition-std);
-}
-
-#logo:hover {
-    /*transform: translateY(-5px);*/
-    box-shadow:
-        rgba(255, 126, 95, 0.4) 0px 0px 0px 1px,
-        rgba(255, 126, 95, 0.3) 0px 0px 0px 3px,
-        rgba(255, 126, 95, 0.2) 0px 0px 0px 5px,
-        rgba(255, 126, 95, 0.1) 0px 0px 0px 8px,
-        rgba(255, 126, 95, 0.05) 0px 0px 0px 13px;
-}
-
-#logo i {
-    color: white;
-    font-size: 12px;
-    text-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
 }
 
 ul {
@@ -291,23 +272,10 @@ a>i {
     font-size: 14px;
 }
 
+
 .btn {
-    position: relative;
-    padding: 1em;
-    border-radius: 25px;
-    color: var(--btn-font-color);
-    border: var(--btn-border);
-    box-shadow: var(--btn-box-shadow)
-}
-
-.btn:hover {
-    background-color: var(--btn-bg-hover);
-    color: var(--btn-font-color-hover);
-    border: var(--btn-border-hover)
-}
-
-.btn-socials {
     height: 36px;
+    font-weight: 500;
     color: #000;
     white-space: nowrap;
     cursor: pointer;
@@ -325,7 +293,27 @@ a>i {
     box-shadow: inset 0 -3px 4px -1px rgba(0, 0, 0, .04), 0 2px 5px rgba(221, 150, 150, .04), 0 4px 4px rgba(0, 0, 0, .02), 0 0 0 1px rgba(0, 0, 0, .09);
 }
 
-.btn-socials:hover {
+.btn-lg {
+    height: 48px;
+    width: ;
+    color: #000;
+    white-space: nowrap;
+    cursor: pointer;
+    background-color: #fff;
+    border: 1px rgba(0, 0, 0, .04);
+    border-radius: 6px;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1em;
+    font-size: 13px;
+    text-decoration: none;
+    transition: var(--transition-std);
+    display: flex;
+    gap: 0.5em;
+    box-shadow: inset 0 -3px 4px -1px rgba(0, 0, 0, .04), 0 2px 5px rgba(221, 150, 150, .04), 0 4px 4px rgba(0, 0, 0, .02), 0 0 0 1px rgba(0, 0, 0, .09);
+}
+
+.btn:hover {
     box-shadow: inset 0 -3px 4px -1px rgba(0, 0, 0, .09), 0 2px 5px rgba(0, 0, 0, .13), 0 4px 4px rgba(0, 0, 0, .02), 0 0 0 1px rgba(0, 0, 0, .09);
 }
 
@@ -340,7 +328,7 @@ h6 {
 }
 
 p {
-    line-height: 162.5%;
+    line-height: 145%;
 }
 
 /******* 
@@ -435,9 +423,6 @@ START DESKTOP MEDIA QUERIES
         margin: 0 auto;
     }
 
-    section {
-        padding: 0 1em;
-    }
 
     .hero {
         display: flex;
@@ -523,7 +508,7 @@ START DESKTOP MEDIA QUERIES
         align-self: end;
     }
 
-    .btn-socials {
+    .btn {
         max-width: 10em;
     }
 

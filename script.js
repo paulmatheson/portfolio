@@ -93,14 +93,12 @@ function switchTheme(e) {
     if (e.target.checked) {
         document.documentElement.setAttribute('data-theme', 'dark') // Sets the "data-theme" attribute of the root element to "dark"
         localStorage.setItem('theme', 'dark') // Saves preferences in local storage
-        toggleBtn.classList.remove('fa-sun') // Removes the sun icon
-        toggleBtn.classList.add('fa-moon') // Adds moon icon
+
     }
     else {
         document.documentElement.setAttribute('data-theme', 'light') // Sets the "data-theme" attribute of the root element to "light"
         localStorage.setItem('theme', 'light') // Saves preferences in local storage
-        toggleBtn.classList.remove('fa-moon') // Removes moon icon
-        toggleBtn.classList.add('fa-sun') // Adds sun icon
+
     }
 }
 
@@ -112,7 +110,6 @@ if (currentTheme) {
 
     if (currentTheme === 'dark') {
         toggleSwitch.checked = true
-        toggleBtn.classList.remove('fa-sun')
-        toggleBtn.classList.add('fa-moon')
+
     }
 }
