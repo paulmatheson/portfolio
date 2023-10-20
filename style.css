@@ -17,6 +17,7 @@
         rgba(50, 50, 93, 0.05) 0px 50px 100px -20px,
         rgba(0, 0, 0, 0.05) 0px 30px 60px -30px,
         rgba(10, 37, 64, 0.12) 0px -2px 6px 0px inset;
+    --card-bg-filter: blur(15px);
     --btn-font-color: #171717;
     --btn-bg: #ffffff;
     --btn-bg-hover: #ffffff;
@@ -25,31 +26,38 @@
     --link-font-color-hover: #FF474D;
     --border-footer: 1px solid #e0e0e0;
     --transition-std: all 0.25s ease-in-out;
+    --glow: 1px 1px 0 #1d875700, 0 0 20px 5px #c0ffe400, inset 2px 2px 0 #d3ffec00;
+    --nav-link-color: #666;
 }
 
 [data-theme="dark"] {
     --bg-color: #020418;
     --bg-gradient: radial-gradient(circle,
             #020418 0%,
-            rgb(7, 7, 43) 100%);
+            rgb(18, 18, 56) 100%);
     --font-color: #d3d3d3;
     --font-faded: #a5a5a5;
     --font-bold: #eaeaea;
-    --card-bg: rgba(44, 46, 75, 0.35);
-    --card-border: 1px solid #303852;
+    --card-bg: rgba(43, 38, 144, 0.131);
+    --card-border: 1px solid rgba(255, 255, 255, .25);
     --card-box-shadow:
         rgba(50, 50, 93, 0.05) 0px 50px 100px -20px,
         rgba(0, 0, 0, 0.05) 0px 30px 60px -30px,
-        rgba(10, 37, 64, 0.12) 0px -2px 6px 0px inset;
+        rgba(10, 37, 64, 0.12) 0px -2px 6px 0px inset,
+        0 0 10px 1px rgba(0, 0, 0, 0.25);
+    --card-bg-filter: blur(15px);
     --btn-font-color: #ffffff;
     --btn-bg: rgba(109, 115, 158, 0);
-    --btn-bg-hover: #5036e7d0;
+    --btn-bg-hover: #FF474D;
     --btn-font-color-hover: #ffffff;
     --btn-border: 1px solid #75709282;
-    --btn-border-hover: 1px solid rgba(179, 32, 66, 0.5);
-    --btn-box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(94, 79, 135, 0.08) 0px 0px 0px 1px;
+    --btn-border-hover: 1px solid rgba(205, 59, 61, 0.703);
+    --btn-box-shadow: rgba(175, 159, 159, 0.05) 0px 6px 24px 0px, rgba(94, 79, 135, 0.08) 0px 0px 0px 1px;
     --link-font-color-hover: #FF474D;
     --border-footer: 1px solid #e0e0e049;
+    --btn-i-hover: #fff;
+    --glow: 1px 1px 0 #ff474d38, 1px 1px 30px 5px rgba(179, 32, 66, 0.779), inset 2px 2px 50px #FF474D;
+    --nav-link-color: #ffffffd6;
 }
 
 html {
@@ -88,6 +96,7 @@ nav {
     justify-content: space-between;
     margin: 0 0 4em 0;
     width: 100%;
+
 }
 
 #logo {
@@ -101,7 +110,8 @@ nav {
 nav a {
     display: flex;
     align-items: center;
-    gap: 0.7em
+    gap: 0.7em;
+    color: var(--nav-link-color);
 }
 
 nav div {
@@ -254,7 +264,8 @@ article {
     border-radius: 15px;
     padding: 1em 2em 2em 2em;
     border: var(--card-border);
-    box-shadow: var(--card-box-shadow)
+    box-shadow: var(--card-box-shadow);
+    backdrop-filter: var(--card-bg-filter);
 }
 
 
@@ -310,7 +321,12 @@ a>i {
 .btn:hover {
     background-color: var(--btn-bg-hover);
     color: var(--btn-font-color-hover);
-    box-shadow: inset 0 -3px 4px -1px rgba(0, 0, 0, .09), 0 2px 5px rgba(0, 0, 0, .13), 0 4px 4px rgba(0, 0, 0, .02), 0 0 0 1px rgba(0, 0, 0, .09);
+    box-shadow: inset 0 -3px 4px -1px rgba(0, 0, 0, .09), 0 2px 5px rgba(0, 0, 0, .13), 0 4px 4px rgba(0, 0, 0, .02), 0 0 0 1px rgba(0, 0, 0, .09),
+        var(--glow)
+}
+
+.btn i:hover {
+    color: var(--btn-i-hover)
 }
 
 h1,

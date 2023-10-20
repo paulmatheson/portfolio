@@ -67,7 +67,7 @@ if (hmProjList !== null) {
         article.innerHTML = `
             <h3>${project.title}</h3>
             <p>${project.description}</p>
-            <a class="btn" href="${project.link}" target="_blank">Open Project <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            <a class="btn" href="${project.link}" target="_blank">Open Project ⧉</a>
         `
         hmProjList.appendChild(article)
     }
@@ -80,7 +80,7 @@ if (projectList !== null) {
         projectDiv.innerHTML = `
         <h3>${project.title}</h3>
         <p>${project.description}</p>
-        <a class="btn" href="${project.link}" target="_blank">Open Project <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        <a class="btn" href="${project.link}" target="_blank">Open Project ⧉</a>
     `;
         projectList.appendChild(projectDiv);
     });
