@@ -1,4 +1,4 @@
-const projects = [
+const db = [
     {
         title: "Weather app",
         description: "A fully functional weather application that interacts with Visual Crossing's Easy Global Weather API.",
@@ -63,7 +63,7 @@ const projectList = document.getElementById('project-list');
 if (hmProjList !== null) {
     for (let i = 0; i < 3; i++) {
         let article = document.createElement('article')
-        let project = projects[i]
+        let project = db[i]
         article.innerHTML = `
             <h3>${project.title}</h3>
             <p>${project.description}</p>
@@ -75,7 +75,7 @@ if (hmProjList !== null) {
 
 if (projectList !== null) {
     const projectList = document.getElementById('project-list');
-    projects.forEach(project => {
+    db.forEach(project => {
         const projectDiv = document.createElement('article');
         projectDiv.innerHTML = `
         <h3>${project.title}</h3>
