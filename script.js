@@ -57,8 +57,9 @@ const db = [
     }
 ];
 
-const hmProjList = document.getElementById('hm-project-cards');
-const projectList = document.getElementById('project-list');
+const hmProjList = document.getElementById('hm-project-cards')
+const projectList = document.getElementById('project-list')
+
 
 if (hmProjList !== null) {
     for (let i = 0; i < 3; i++) {
@@ -86,30 +87,55 @@ if (projectList !== null) {
     });
 }
 
-const toggleSwitch = document.getElementById('switch') // assign input element to variable
-const themeIcon = document.getElementById('theme-switch-icon') // 
+const toggleLinks = document.querySelectorAll('.theme-toggle-link')
 
-function switchTheme(e) {
-    if (e.target.checked) {
-        document.documentElement.setAttribute('data-theme', 'dark') // Sets the "data-theme" attribute of the root element to "dark"
-        localStorage.setItem('theme', 'dark') // Saves preferences in local storage
 
+const dayIcon = '<ion-icon name="sunny-outline" id="theme-toggle-icon"></ion-icon>'
+const nightIcon = '<ion-icon name="moon-outline" id="theme-toggle-icon"></ion-icon>'
+
+function switchTheme() {
+    const currentTheme = document.documentElement.getAttribute('data-theme')
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light'
+
+    document.documentElement.setAttribute('data-theme', newTheme)
+
+    if (newTheme === 'light') {
+        toggleLink.innerHTML = dayIcon
+    } else {
+        toggleLink.innerHTML = nightIcon
     }
-    else {
-        document.documentElement.setAttribute('data-theme', 'light') // Sets the "data-theme" attribute of the root element to "light"
-        localStorage.setItem('theme', 'light') // Saves preferences in local storage
 
-    }
+    localStorage.setItem('theme', newTheme)
 }
 
-toggleSwitch.addEventListener('change', switchTheme, false);
+toggleLinks.forEach(link => {
+    link.addEventListener('click', function (e) {
+        e.preventDefault(); // Prevent the default link behavior
+        switchTheme();
+    })
+})
 
-const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null; // Checks if theme saved in local storage and what it is set to; null if not saved
-if (currentTheme) {
-    document.documentElement.setAttribute('data-theme', currentTheme) // If yes, sets the document to the user preferences
+// Set the initial theme based on local storage
+const savedTheme = localStorage.getItem('theme')
+if (savedTheme) {
+    document.documentElement.setAttribute('data-theme', savedTheme)
+}
 
-    if (currentTheme === 'dark') {
-        toggleSwitch.checked = true
+function menuAnimation(toggle) {
+    const slideNav = document.getElementById("slideNav")
+    const sideBarLinks = document.getElementById("sidebar-links")
+    const socialIcons = document.getElementById("socialIcons")
 
-    }
+    toggle.classList.toggle("change");
+
+    slideNav.classList.toggle("navSlide")
+    slideNav.classList.toggle('bring-forward')
+    slideNav.classList.toggle('bring-backward')
+
+    sideBarLinks.classList.toggle("fade-in")
+    socialIcons.classList.toggle("fade-in")
+
+    document.body.classList.toggle('no-scroll')
+    document.body.classList.toggle('modal-open')
+
 }

@@ -14,17 +14,60 @@
             <div id="logo"></div>
             <span>Paul Matheson</span>
         </a>
-        <div>
-            <ul>
+
+        <div class="menu-button" onclick="menuAnimation(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+
+        <div class="sidebar bring-backward" id="slideNav">
+            <div class="sidebar-links" id="sidebar-links">
+                <a href="index.html" class="item">Home</a>
+                <a href="about.html" class="item">About</a>
+                <a href="projects.html" class="item">Projects</a>
+                <a href="http://blog.paulmatheson.net" class="item" target="_blank">Writing</a>
+                <ul id="socialIcons">
+                    <li>
+                        <a href="https://github.com/paulmatheson" target="_blank">
+                            <ion-icon name="logo-github"></ion-icon>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://codepen.io/illpill/" target="_blank">
+                            <ion-icon name="logo-codepen"></ion-icon>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/mathesonpaul/" target="_blank">
+                            <ion-icon name="logo-linkedin"></ion-icon>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/illpill_photo/" target="_blank">
+                            <ion-icon name="logo-instagram"></ion-icon>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/illpill" target="_blank">
+                            <ion-icon name="logo-twitter"></ion-icon>
+                        </a>
+                    </li>
+                </ul>
+                <a class="theme-toggle-link">
+                    <ion-icon name="sunny-outline" id="theme-toggle-icon"></ion-icon>
+                </a>
+            </div>
+        </div>
+        <div class="header-nav">
+            <ul class="nav-links">
                 <li><a href="about.html">About</a></li>
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="http://blog.paulmatheson.net" target="_blank">Writing</a></li>
+                <a class="theme-toggle-link">
+                    <ion-icon name="sunny-outline" id="theme-toggle-icon"></ion-icon>
+                </a>
             </ul>
-            <div id="theme-toggle-switch">
-                <ion-icon name="sunny-outline"></ion-icon>
-                <input type="checkbox" id="switch" /><label class="theme-switch" for="switch">Toggle</label>
-                <ion-icon name="moon-outline"></ion-icon>
-            </div>
         </div>
     </nav>
     <main>
