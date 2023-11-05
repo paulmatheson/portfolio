@@ -59,6 +59,7 @@ const db = [
 
 const hmProjList = document.getElementById('hm-project-cards')
 const projectList = document.getElementById('project-list')
+const brand = document.getElementById('brand')
 
 
 if (hmProjList !== null) {
@@ -136,6 +137,9 @@ function menuAnimation(toggle) {
     socialIcons.classList.toggle("fade-in")
 
     document.body.classList.toggle('no-scroll')
-    document.body.classList.toggle('modal-open')
-
+    if (document.body.classList.contains('no-scroll')) {
+        document.querySelector('main').style.opacity = 0;
+    } else {
+        document.querySelector('main').style.opacity = 100;
+    }
 }
