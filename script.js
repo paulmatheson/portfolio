@@ -90,20 +90,19 @@ if (projectList !== null) {
 
 const toggleLinks = document.querySelectorAll('.theme-toggle-link')
 
-
 const dayIcon = '<ion-icon name="sunny-outline" id="theme-toggle-icon"></ion-icon>'
 const nightIcon = '<ion-icon name="moon-outline" id="theme-toggle-icon"></ion-icon>'
 
-function switchTheme() {
+function switchTheme(link) {
     const currentTheme = document.documentElement.getAttribute('data-theme')
     const newTheme = currentTheme === 'light' ? 'dark' : 'light'
 
     document.documentElement.setAttribute('data-theme', newTheme)
 
     if (newTheme === 'light') {
-        toggleLink.innerHTML = dayIcon
+        link.innerHTML = dayIcon
     } else {
-        toggleLink.innerHTML = nightIcon
+        link.innerHTML = nightIcon
     }
 
     localStorage.setItem('theme', newTheme)
@@ -112,7 +111,7 @@ function switchTheme() {
 toggleLinks.forEach(link => {
     link.addEventListener('click', function (e) {
         e.preventDefault(); // Prevent the default link behavior
-        switchTheme();
+        switchTheme(link);
     })
 })
 
