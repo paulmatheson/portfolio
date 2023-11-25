@@ -473,7 +473,6 @@ START ABOUT SECTION
 .about-main {
     display: grid;
     grid-template-columns: 1fr;
-    grid-gap: 2em;
 }
 
 .about-main img {
@@ -485,7 +484,7 @@ START ABOUT SECTION
 .about-main blockquote {
     line-height: 162.5%;
     border-left: 1px solid #e0e0e0;
-    margin: 2em 0;
+    margin: 2em 0 0 0;
     padding: 0 2em;
     font-style: italic;
     font-weight: 100;
@@ -493,18 +492,12 @@ START ABOUT SECTION
     font-size: 0.8em;
 }
 
-#about-quote {
-    width: 30px;
-    height: 30px;
-    border: 1px solid black;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    top: 2em;
-    left: -3.2em;
-    background-color: white;
+.about-main div:last-of-type {
+    display: grid;
+}
+
+.about-main div:last-of-type div {
+    grid-area: 1;
 }
 
 .about-main ul {
@@ -667,26 +660,11 @@ START DESKTOP MEDIA QUERIES
     .about-main blockquote {
         line-height: 162.5%;
         border-left: 1px solid #e0e0e0;
-        margin: 2em 0;
         padding: 0 2em;
         font-style: italic;
         font-weight: 100;
         font-family: 'IBM Plex Mono';
         font-size: 0.8em;
-    }
-
-    #about-quote {
-        width: 30px;
-        height: 30px;
-        border: 1px solid black;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        top: 2em;
-        left: -3.2em;
-        background-color: white;
     }
 
     .about-main ul {
@@ -695,6 +673,10 @@ START DESKTOP MEDIA QUERIES
         grid-gap: 1.2em;
         font-size: 0.8em;
         font-family: 'IBM Plex Mono', 'Courier New', Courier, monospace;
+    }
+
+    .about-main div:last-of-type div {
+        grid-area: 3;
     }
 
     .find-me-socials {
