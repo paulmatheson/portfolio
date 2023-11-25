@@ -1,5 +1,5 @@
 export function renderProjects(projects, hmProjList, projectList) {
-    console.log("Test")
+
     if (hmProjList !== null) {
         for (let i = 0; i < 3; i++) {
             let article = document.createElement('article')
@@ -14,6 +14,7 @@ export function renderProjects(projects, hmProjList, projectList) {
     }
 
     if (projectList !== null) {
+
         const projectList = document.getElementById('project-list');
         projects.forEach(project => {
             const projectDiv = document.createElement('article');

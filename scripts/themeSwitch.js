@@ -1,4 +1,4 @@
-export function switchTheme(link) {
+export function switchTheme(link, dayIcon, nightIcon) {
     const currentTheme = document.documentElement.getAttribute('data-theme')
     const newTheme = currentTheme === 'light' ? 'dark' : 'light'
 
