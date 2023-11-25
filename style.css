@@ -347,6 +347,7 @@ li {
     align-items: center;
 }
 
+
 .hero h1 {
     font-size: 4em;
     font-family: 'Chivo', Georgia, 'Times New Roman', Times, serif;
@@ -559,12 +560,10 @@ START DESKTOP MEDIA QUERIES
 
 
     .hero {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: row-reverse;
-        gap: 6em;
-        margin: 0 0 3em 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3em;
+        margin: 0 0 2em 0;
     }
 
     .hero div {
@@ -576,6 +575,7 @@ START DESKTOP MEDIA QUERIES
     }
 
     .hero div:first-of-type {
+        grid-area: 1 / 2;
         display: grid;
         /* diameter of the circle */
         --d: 1px;
@@ -589,6 +589,8 @@ START DESKTOP MEDIA QUERIES
         height: 335px;
         width: 335px;
         border-radius: 50%;
+        max-width: 100%;
+        height: auto;
     }
 
     .hero h1,
