@@ -810,3 +810,19 @@ START DESKTOP MEDIA QUERIES
         margin-right: 8px;
     }
 }
+
+.grid-item {
+    width: 20%;
+    min-width: 150px;
+}
+
+.grid-item--width2 {
+    width: 40%;
+    min-width: 150px;
+}
+
+.grid-item img {
+    width: 100%;
+
+    height: auto;
+}
