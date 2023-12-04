@@ -1,4 +1,4 @@
-import projects from './projectData.js'
+import projectsArr from './projectData.js'
 import { renderProjects } from './projectRenderer.js'
 import { switchTheme } from './themeSwitch.js'
 import { menuAnimation } from "./menuAnimation.js"
@@ -30,9 +30,7 @@ if (savedTheme) {
     document.documentElement.setAttribute('data-theme', savedTheme)
 }
 
-renderProjects(projects, hmProjList, projectList)
-
-
+renderProjects(projectsArr, hmProjList, projectList)
 
 let grid = document.querySelector('.grid');
 

@@ -55,7 +55,7 @@
     --btn-border-hover: 1px solid rgba(205, 59, 61, 0.564);
     --btn-box-shadow: rgba(15, 7, 38, 0.225) 0px 2px 0px 1px;
     --link-font-color-hover: #FF474D;
-    --border-footer: 1px solid #e0e0e049;
+    --border-footer: 1px solid #92909015;
     --btn-i-hover: #fff;
     --glow: 1px 1px 0 #ff474d1f, 1px 1px 30px 5px rgba(179, 32, 66, 0.38), inset 0px 0px 14px #95292d;
     --nav-link-color: #ffffffd6;
@@ -385,7 +385,7 @@ li {
 article {
     background-color: var(--card-bg);
     border-radius: 15px;
-    padding: 1em 2em 2em 2em;
+    padding: 1em 2em 1em 2em;
     border: var(--card-border);
     box-shadow: var(--card-box-shadow);
     backdrop-filter: var(--card-bg-filter);
@@ -413,6 +413,34 @@ i:hover {
 a>i {
     padding-left: 0.2em;
     font-size: 14px;
+}
+
+article h5 {
+    color: var(--font-faded);
+    margin: 1em 0.4em 0 0;
+}
+
+.tag-list {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3em;
+    width: 100%;
+    border-top: var(--border-footer);
+    margin-top: 1.3em;
+    padding: 1.2em 0 0 0;
+}
+
+.tag-list li {
+    color: white;
+    font-family: 'IBM Plex Mono';
+    font-size: 13px;
+    background-color: #54597e;
+    padding: 0.4em 0.8em;
+    height: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
 }
 
 
@@ -626,6 +654,7 @@ START DESKTOP MEDIA QUERIES
     }
 
     article p {
+        font-size: 0.9em;
         margin: 0 0 1em 0;
     }
 
