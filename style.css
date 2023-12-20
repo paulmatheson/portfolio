@@ -357,7 +357,7 @@ li {
 .hero img {
     height: 140px;
     width: 140px;
-    border-radius: 50%;
+    border-radius: 15px;
 }
 
 .social-links {
