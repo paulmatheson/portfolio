@@ -1,9 +1,7 @@
-const api = process.env.API_KEY;
-const url = `https://api.unsplash.com/users/paulmatheson/statistics/?client_id=${api}`
 const unsplashStats = document.getElementById('unsplash-stats')
 
 async function getUnsplashData() {
-    const response = await fetch(url);
+    const response = await fetch('/.netlify/functions/unsplashStats');
     const profileStats = await response.json();
 
     const views = new Intl.NumberFormat().format(profileStats.views.total)
