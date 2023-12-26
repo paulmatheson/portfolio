@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Chivo:wght@600&display=swap');
 
 :root {
@@ -206,6 +205,12 @@ ul {
 li {
     margin: 0;
     padding: 0;
+}
+
+#photo-stat {
+    font-size: 20px;
+    font-family: 'Chivo', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: var(--font-color)
 }
 
 /***************************/
@@ -838,6 +843,10 @@ START DESKTOP MEDIA QUERIES
     .modal-open {
         margin-right: 8px;
     }
+}
+
+.grid {
+    margin: 2em 0;
 }
 
 .grid-item {
