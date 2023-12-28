@@ -1,3 +1,5 @@
+const fetch = require('node-fetch');
+
 exports.handler = async function (event, context) {
     const api = process.env.API_KEY;
     const url = `https://api.unsplash.com/users/paulmatheson/statistics/?client_id=${api}`;
