@@ -7,6 +7,7 @@ exports.handler = async function (event, context) {
     try {
         const response = await fetch(url);
         const profileStats = await response.json();
+        console.log("Unsplash API Response:", profileStats)
 
         const views = new Intl.NumberFormat().format(profileStats.views.total);
         const downloads = new Intl.NumberFormat().format(profileStats.downloads.total);
