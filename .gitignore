@@ -1,1 +1,3 @@
 **/*.psd
+# Local Netlify folder
+.netlify
