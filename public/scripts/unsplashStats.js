@@ -1,6 +1,7 @@
 async function updateUnsplashStats() {
     try {
         const response = await fetch('/getUnsplashData');
+        console.log('Response Data:', response);
 
         if (!response.ok) {
             throw new Error(`Failed to fetch data. Status: ${response.status}`);
