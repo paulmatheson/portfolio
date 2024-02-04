@@ -1,3 +1,7 @@
 **/*.psd
 # Local Netlify folder
 .netlify
+
+.env
+script_test.js
+node_modules/

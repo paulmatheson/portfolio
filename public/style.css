@@ -102,7 +102,7 @@ nav {
 }
 
 #logo {
-    background-image: url(/public/images/logo.png);
+    background-image: url(images/logo.png);
     background-size: contain;
     background-repeat: no-repeat;
     height: 25px;
@@ -727,7 +727,7 @@ START DESKTOP MEDIA QUERIES
     }
 
     #logo {
-        background-image: url(/public/images/logo.png);
+        background-image: url(images/logo.png);
         background-size: contain;
         background-repeat: no-repeat;
         height: 25px;

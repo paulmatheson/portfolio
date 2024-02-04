@@ -1,19 +1,20 @@
 {
-  "type": "module",
   "dependencies": {
-    "axios": "^1.6.5",
+    "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "node-fetch": "^2.7.0"
   },
-  "proxy": "http://127.0.0.1:8888",
   "name": "portfolio",
-  "description": "",
+  "description": "Paul Matheson's personal web site.",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "start": "node index",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "Portfolio"
+  ],
+  "author": "Paul Matheson",
   "license": "ISC"
 }
