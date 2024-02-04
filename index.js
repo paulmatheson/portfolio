@@ -13,7 +13,6 @@ app.use(express.static('public'));
 app.use(express.json({ limit: '1mb' }));
 
 app.get('/getUnsplashData', async (request, response) => {
-    console.log(request.url);
 
     const api_url = `https://api.unsplash.com/users/paulmatheson//statistics/?client_id=${api_key}`
 
