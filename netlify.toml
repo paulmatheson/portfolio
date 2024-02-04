@@ -1,0 +1,5 @@
+[build]
+  command = "node index"
+
+[[plugins]]
+  package = "netlify-plugin-bundle-env"
