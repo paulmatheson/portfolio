@@ -14,7 +14,7 @@ app.use(express.json({ limit: '1mb' }));
 
 app.get('/getUnsplashData', async (request, response) => {
 
-    const api_url = `https://api.unsplash.com/users/paulmatheson//statistics/?client_id=${api_key}`
+    const api_url = `https://api.unsplash.com/users/paulmatheson/statistics/?client_id=${api_key}`
 
     const fetch_response = await fetch(api_url)
     const json = await fetch_response.json()
