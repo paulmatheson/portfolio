@@ -2,7 +2,7 @@ import photos from './photoData.js'
 
 async function updateUnsplashStats() {
     try {
-        const response = await fetch('/getUnsplashData');
+        const response = await fetch('/.netlify/functions/getUnsplashData');
         console.log('Response Data:', response);
 
         if (!response.ok) {
