@@ -1,29 +1,23 @@
-require('dotenv').config();
+require('dotenv').config()
 const fetch = require('node-fetch');
 const api_key = process.env.API_KEY;
 
-const express = require('express');
-const app = express();
-const port = process.env.PORT || 3000;
+const express = require('express')
+const app = express()
+const port = process.env.PORT || 4000;
 
 app.listen(port, () => {
     console.log(`Starting server at ${port}`);
 });
-
 app.use(express.static('public'));
 app.use(express.json({ limit: '1mb' }));
 
 app.get('/getUnsplashData', async (request, response) => {
     console.log(request.url);
 
-    const api_url = `https://api.unsplash.com/users/paulmatheson/statistics/?client_id=${api_key}`;
+    const api_url = `https://api.unsplash.com/users/paulmatheson/statistics/?client_id=${api_key}`
 
-    try {
-        const fetch_response = await fetch(api_url);
-        const json = await fetch_response.json();
-        response.json(json);
-    } catch (error) {
-        console.error('Error fetching Unsplash data:', error);
-        response.status(500).json({ error: 'Internal Server Error' });
-    }
-});
+    const fetch_response = await fetch(api_url)
+    const json = await fetch_response.json()
+    response.json(json)
+})
