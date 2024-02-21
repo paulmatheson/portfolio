@@ -7,73 +7,66 @@
 
 	<title>Random Quote Generator</title>
 
-	<link href="css/style.css" rel="stylesheet">
-
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+		integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+		integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
 	<link href="https://fonts.googleapis.com/css?family=Libre+Franklin:300,400,600,700,800" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
 </head>
 
-<body onload="newQuote();">
+<body onload="getData();">
 	<nav class="navbar navbar-default navbar-static-top">
 		<div class="hidden-sm hidden-md hidden-lg">
 			<a class="navbar-brand" href="../../index.html">&larr; <i class="fa fa-home" aria-hidden="true"></i></a>
 		</div>
-	    <div class="hidden-xs" id="bs-example-navbar-collapse-1 text-center">
-	    	<a class="navbar-brand" href="../../webdev.html">&larr; Back Home</a>
-	    </div>
+		<div class="hidden-xs" id="bs-example-navbar-collapse-1 text-center">
+			<a class="navbar-brand" href="../../projects">&larr; Back Home</a>
+		</div>
 	</nav>
 	<div class="container fill">
 		<div class="row">
-			<!--<h4 class="text-center" id="title">The Quote Machine</h4>-->
-			<div class="col-sm-3"></div>
-			<div class="col-sm-6" id="quote-display">
-				<div class="text-center">
-					<!-- The Quote Begins Here -->
-					<!-- XS Version -->
-					<h3><span id="quote-xs" class="text-center hidden-sm hidden-md hidden-lg"></span></h3>
-					<h4 class="text-center"><span id="author-xs" class="hidden-sm hidden-md hidden-lg"></span></h4>
-					<!-- For Regular Sized Screens -->
-					<h3><span id="quote" class="text-center hidden-xs"></span></h3>
-					<h4 class="text-right"><span id="author" class="hidden-xs"></span></h4>
+			<div id="quote-display">
+				<div>
+					<h3 id="quote"></h3>
+					<h4 id="author"></h4>
 				</div>
 				<div class="row">
 					<div class="col-xs-4 text-center">
-						<button class="btn btn-default btn-md" onclick="newQuote();" id="newButton">
-							<i class="fa fa-refresh hidden-sm hidden-md hidden-lg"></i><span class="hidden-xs">New Quote</span></button>
+						<button class="btn btn-default btn-md" onclick="getData();" id="newButton">
+							<i class="fa fa-refresh hidden-sm hidden-md hidden-lg"></i>
+							<span class="hidden-xs">New Quote</span>
 						</button>
 					</div>
 					<div class="col-xs-4"></div>
 					<div class="col-xs-4 text-center">
-						<div class="clickable-div">
-							
-							<button class="btn btn-default btn-md tweet">
-								
-									<i class="fa fa-twitter hidden-sm hidden-md hidden-lg"></i><span class="hidden-xs">Tweet This</span>
-								
-							</button>
-							
-						</div>
+
+						<button class="btn btn-default btn-md tweet">
+							<i class="fa fa-twitter hidden-sm hidden-md hidden-lg"></i>
+							<span class="hidden-xs">
+								Tweet This
+							</span>
+						</button>
 					</div>
 				</div>
 			</div>
-			<div class="col-sm-3"></div>
 		</div>
 		<div class="row">
 			<div class="col-sm-12">
-				<p class="text-center">Developed by <a href="http://www.paulmatheson.net">Paul Matheson</a></p>
-				<p class="text-center">If you enjoyed using it, consider <a href="http://www.PayPal.Me/pmatheson" target="_blank">getting me a coffee</a>.</p>
+				<p class="text-center">Developed by <a href="http://www.dev.paulmatheson.net">Paul Matheson</a></p>
+				<p class="text-center">If you enjoyed using it, consider <a href="http://www.PayPal.Me/pmatheson"
+						target="_blank">getting me a coffee</a>.</p>
 			</div>
 		</div>
 	</div>
-	<script
-	  src="https://code.jquery.com/jquery-3.2.1.min.js"
-	  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-	  crossorigin="anonymous">
-	</script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
-	</script>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+		integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
+		</script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+		integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+		</script>
 	<script src="js/script.js"></script>
 </body>
+
 </html>
