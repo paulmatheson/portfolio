@@ -4,7 +4,7 @@ const projectsArr = [
         description: "A fully functional weather application that interacts with Visual Crossing's Easy Global Weather API.",
         link: "http://weatherapp.paulmatheson.net/",
         type: "Web application",
-        tags: ["HTML/CSS", "JS", "Node.js", "API", "Express.js", "App design"],
+        tags: ["HTML/CSS", "JS", "Node.js", "API", "Netlify", "App design", "Chart.js"],
         img: ""
     },
     {
