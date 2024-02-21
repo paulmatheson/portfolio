@@ -39,7 +39,7 @@ function newQuote(author, quote) {
 };
 
 function tweet(message, author) {
-	window.open('https://twitter.com/intent/tweet?hashtags=thequotemachine&text=' + encodeURIComponent(`"${message}" -${author} via`));
+	window.open('https://twitter.com/intent/tweet?hashtags=thequotemachine&text=' + encodeURIComponent(`"${message}" - ${author} via`));
 }
 
 function truncateString(quote, author) {
