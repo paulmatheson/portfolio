@@ -555,6 +555,21 @@ START PROJECT PAGE
     display: grid;
 }
 
+/******* 
+START FE PROJECTS SECTION 
+*********/
+
+.fe-projects-main {
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+}
+
+.fe-proj-section {
+    width: 50%;
+    background-color: #ffffff;
+}
+
 /******
 START DESKTOP MEDIA QUERIES 
 *******/
