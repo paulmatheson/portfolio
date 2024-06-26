@@ -12,7 +12,10 @@
     --font-bold: #171717;
     --card-bg: #FAFAFA;
     --card-border: 0px solid white;
-    --card-box-shadow: 0 1px 5px -4px #131316a6, 0 0 0 1px #222a3507, 0 4px 8px #222a350d;
+    --card-box-shadow:
+        rgba(50, 50, 93, 0.05) 0px 50px 100px -20px,
+        rgba(0, 0, 0, 0.05) 0px 30px 60px -30px,
+        rgba(10, 37, 64, 0.12) 0px -2px 6px 0px inset;
     --card-bg-filter: blur(15px);
     --btn-font-color: #171717;
     --btn-bg: #ffffff;
@@ -556,29 +559,21 @@ START DEV PROJECT PAGE
 START FE PROJECTS SECTION 
 *********/
 
-.fe-project-list {
-    display: grid;
-    gap: 0em;
-    width: 100%;
-    padding: 0em 0em;
-}
-
-.fe-project-list li:first-of-type {
-    font-weight: 600;
-}
-
-.fe-project-list li {
-    list-style: none;
-    padding: 1em 0;
-    border-bottom: 1px solid #e0e0e0;
+.fe-projects-container {
     display: inline-grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    font-size: 14px;
+    grid-template-columns: 1fr 2fr;
+    gap: 1em;
+    text-align: right;
 }
 
+.fe-proj-section {
+    background-color: #ffffff;
+    padding: 0 2em;
+}
 
-
-
+#fe-preview {
+    text-align: left;
+}
 
 /******
 START DESKTOP MEDIA QUERIES 
