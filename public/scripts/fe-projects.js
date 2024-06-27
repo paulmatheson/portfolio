@@ -3,7 +3,7 @@ const projList = [
         'id': 0,
         'title': 'FAQ Accordion Card',
         'gh': 'https://github.com/paulmatheson/frontend-mentor/tree/main/faq-accordion-card-main',
-        'liveurl': '',
+        'liveurl': 'https://amazing-rugelach-710d57.netlify.app/',
         'tech': 'HTML, CSS',
         'img': 'https://raw.githubusercontent.com/paulmatheson/frontend-mentor/main/faq-accordion-card-main/images/Screenshot.png'
     },
