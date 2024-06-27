@@ -1,7 +1,7 @@
 const projectsArr = [
     {
         title: "Frontend Mentor Projects",
-        description: "A fully functional weather application that interacts with Visual Crossing's Easy Global Weather API.",
+        description: "A collection of solutions to Frontend Mentor challenges, showcasing clean and responsive UI design with all projects accessible on GitHub and live on Netlify.",
         link: "projects-frontend.html",
         type: "Collection",
         tags: ["HTML/CSS", "JS", "React", "Netlify", "App design"],
