@@ -8,6 +8,11 @@ export function renderProjects(projectsArr, hmProjList, projectList) {
             let article = document.createElement('article')
             let project = projectsArr[i]
 
+            let newWindowIcon = ''
+            if (project.target == '_blank') {
+                newWindowIcon = ' <ion-icon name="open-outline"></ion-icon>'
+            }
+
             let tags = []
             project.tags.forEach(tag => {
                 tags.push(`<li>${tag}</li>`)
@@ -19,7 +24,7 @@ export function renderProjects(projectsArr, hmProjList, projectList) {
                 
                 <p>${project.description}</p>
                 <img src="${project.img}" />
-                <a class="btn" href="${project.link}" target="${project.target}">Open Project ⧉</a>
+                <a class="btn" href="${project.link}" target="${project.target}">Open Project ${newWindowIcon}</a>
                 <ul class="tag-list">${tags.join("")}</ul>
             `
             hmProjList.appendChild(article)
@@ -33,8 +38,12 @@ export function renderProjects(projectsArr, hmProjList, projectList) {
 
         projectsArr.forEach(project => {
             let tags = []
+            let newWindowIcon = ''
 
             const projectType = renderProjType(project)
+            if (project.target == '_blank') {
+                newWindowIcon = ' <ion-icon name="open-outline"></ion-icon>'
+            }
 
             project.tags.forEach(tag => {
                 tags.push(`<li>${tag}</li>`)
@@ -47,7 +56,7 @@ export function renderProjects(projectsArr, hmProjList, projectList) {
             
             <p>${project.description}</p>
             <img src="${project.img}" />
-            <a class="btn" href="${project.link}" target="_blank">Open Project ⧉</a>
+            <a class="btn" href="${project.link}" target="${project.target}">Open Project ${newWindowIcon}</a>
             <ul class="tag-list">${tags.join("")}</ul>
         `;
             projectList.appendChild(projectDiv);
