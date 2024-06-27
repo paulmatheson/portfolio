@@ -51,7 +51,7 @@
     --btn-border-hover: 1px solid rgba(205, 59, 61, 0.564);
     --btn-box-shadow: rgba(15, 7, 38, 0.225) 0px 2px 0px 1px;
     --link-font-color-hover: #FF474D;
-    --border-footer: 1px solid #92909015;
+    --border-footer: 1px solid #92909022;
     --btn-i-hover: #fff;
     --glow: 1px 1px 0 #ff474d1f, 1px 1px 30px 5px rgba(179, 32, 66, 0.38), inset 0px 0px 14px #95292d;
     --nav-link-color: #ffffffd6;
@@ -513,7 +513,7 @@ START ABOUT SECTION
 
 .about-main blockquote {
     line-height: 162.5%;
-    border-left: 1px solid #e0e0e0;
+    border-left: var(--border-footer);
     margin: 2em 0 0 0;
     padding: 0 2em;
     font-style: italic;
@@ -553,8 +553,12 @@ START DEV PROJECT PAGE
 }
 
 /******* 
-START FE PROJECTS SECTION 
+START FRONTEND MENTOR FE PROJECTS SECTION 
 *********/
+
+.frontend-main section {
+    margin: 0 0 3em 0;
+}
 
 .fe-project-list {
     display: grid;
@@ -570,15 +574,18 @@ START FE PROJECTS SECTION
 .fe-project-list li {
     list-style: none;
     padding: 1em 0;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: var(--border-footer);
     display: inline-grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr;
     font-size: 14px;
+    align-items: center;
 }
 
-
-
-
+.fe-link {
+    width: max-content;
+    padding: 0.3em 0;
+    border-radius: 5px;
+}
 
 /******
 START DESKTOP MEDIA QUERIES 
@@ -718,7 +725,7 @@ START DESKTOP MEDIA QUERIES
 
     .about-main blockquote {
         line-height: 162.5%;
-        border-left: 1px solid #e0e0e0;
+        border-left: var(--border-footer);
         padding: 0 2em;
         font-style: italic;
         font-weight: 100;
