@@ -1,6 +1,6 @@
 var colors = ['#00A0B0', '#6A4A3C', '#CC333F', '#EB6841', '#EDC951', '#3FB8AF', '#7FC7AF', '#FF9E9D', '#C6A49A', '#99B898', '#2A363B', '#F67280', '#C06C84', '#6C5B7B', '#355C7D', '#B3CC57', '#FFBE40', '#CC0C39', '#E6781E', '#02AAB0'];
 
-const apiUrl = 'https://api.quotable.io/random';
+const apiUrl = 'https://ron-swanson-quotes.herokuapp.com/v2/quotes';
 const charLimit = 280 - 25 // Accounting for added formatting characters and default hashtag from url
 
 function getData() {
@@ -10,7 +10,7 @@ function getData() {
 			return response.json()
 		})
 		.then(data => {
-			newQuote(data.author, data.content)
+			newQuote('Ron Swanson', data)
 			truncateString(data.content, data.author)
 		})
 		.catch(error => {

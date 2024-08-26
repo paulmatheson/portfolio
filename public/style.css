@@ -560,6 +560,22 @@ START FRONTEND MENTOR FE PROJECTS SECTION
     margin: 0 0 3em 0;
 }
 
+.grid-switcher {
+    display: flex;
+    justify-content: end;
+    gap: 0.5em;
+}
+
+.grid-switcher ion-icon {
+    padding: 0.2em;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.icon-selected {
+    background-color: #0204181c;
+}
+
 .fe-project-list {
     display: grid;
     gap: 0em;
