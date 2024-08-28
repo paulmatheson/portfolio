@@ -1,4 +1,4 @@
-import projList from './projectData.js'
+import projList from './feProjectData.js'
 
 let projListDisplay = document.getElementById('fe-project-list')
 
@@ -14,6 +14,8 @@ for (let i = 0; i < projList.length && i <= 10; i++) {
     projListDisplay.appendChild(li)
 }
 
+/*
 function feDisplaySwitch() {
     //
 }
+*/
