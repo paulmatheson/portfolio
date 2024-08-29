@@ -585,16 +585,24 @@ START FRONTEND MENTOR FE PROJECTS SECTION
 
 .fe-project-list li:first-of-type {
     font-weight: 600;
+    color: var(--btn-font-color);
 }
 
 .fe-project-list li {
     list-style: none;
-    padding: 1em 0;
+    padding: 1em 0 1em 1em;
     border-bottom: var(--border-footer);
     display: inline-grid;
     grid-template-columns: 2fr 1fr 1fr;
     font-size: 14px;
     align-items: center;
+    transition: all 0.15s ease;
+}
+
+
+.fe-project-list li:not(:first-of-type):hover {
+    background-color: #54597e0e;
+
 }
 
 .fe-link {
