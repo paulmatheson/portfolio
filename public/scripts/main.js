@@ -30,3 +30,6 @@ if (savedTheme) {
 }
 
 renderProjects(projectsArr, hmProjList, projectList)
+
+gsap.from('.fade-up', { opacity: 0, duration: 1, y: '80%', ease: 'power1' })
+gsap.from('.fade-up-slow', { opacity: 0, duration: 1.15, y: '80%', ease: 'power1' }) 
