@@ -9,6 +9,15 @@ const projectsArr = [
         target: "_self"
     },
     {
+        title: "Days Left 365",
+        description: "A fun and interactive app to let you know that time is slipping by.",
+        link: "https://daysleft365.netlify.app/",
+        type: "Web Application",
+        tags: ["HTML/CSS", "JS", "Netlify", "App design"],
+        img: "",
+        target: "_blank"
+    },
+    {
         title: "Weather app",
         description: "A fully functional weather application that interacts with Visual Crossing's Easy Global Weather API.",
         link: "http://weatherapp.paulmatheson.net/",
