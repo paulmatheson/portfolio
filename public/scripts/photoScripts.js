@@ -3,7 +3,7 @@ import photos from './photoData.js'
 async function updateUnsplashStats() {
     try {
         const response = await fetch('/.netlify/functions/getUnsplashData');
-        console.log('Response Data:', response);
+        //console.log('Response Data:', response);
 
         if (!response.ok) {
             throw new Error(`Failed to fetch data. Status: ${response.status}`);
@@ -26,7 +26,7 @@ const htmlArray = [];
 photos.forEach(image => {
     htmlArray.push(`
         <a class="grid-item" href="${image.url}">
-            <img alt="img2" src="${image.url}" />
+            <img alt="img2" src="${image.url}" loading="lazy" />
         </a>
     `);
 });
