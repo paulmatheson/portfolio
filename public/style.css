@@ -1,3 +1,6 @@
+/* =========================
+   1. Variables & Theme
+   ========================= */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Chivo:wght@600&display=swap');
@@ -22,7 +25,7 @@
     --btn-box-shadow: inset 0 -3px 4px -1px rgba(0, 0, 0, .04), 0 2px 5px rgba(221, 150, 150, .04), 0 4px 4px rgba(0, 0, 0, .02), 0 0 0 1px rgba(0, 0, 0, .09);
     --link-font-color-hover: #FF474D;
     --border-footer: 1px solid #e0e0e0;
-    --transition-std: all 0.25s ease-in-out;
+    --transition-std: all 0.2s ease-in-out;
     --glow: 1px 1px 0 #1d875700, 0 0 20px 5px #c0ffe400, inset 2px 2px 0 #d3ffec00;
     --nav-link-color: #666;
 }
@@ -57,6 +60,9 @@
     --nav-link-color: #ffffffd6;
 }
 
+/* =========================
+   2. Base Styles
+   ========================= */
 html {
     transition: var(--transition-std);
 }
@@ -89,6 +95,19 @@ footer {
     font-size: 13px;
 }
 
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 0;
+    padding: 0;
+}
+
+/* =========================
+   3. Layout & Navigation
+   ========================= */
 nav {
     display: flex;
     align-items: center;
@@ -130,6 +149,9 @@ nav input[type=checkbox] {
     display: none
 }
 
+/* =========================
+   4. Theme Toggle
+   ========================= */
 #theme-toggle-switch {
     display: flex;
     flex-direction: row;
@@ -192,16 +214,6 @@ label:active:after {
 .theme-switch {
     cursor: pointer;
     font-size: 1.2em;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-li {
-    margin: 0;
-    padding: 0;
 }
 
 #photo-stat {
@@ -445,7 +457,9 @@ article h5 {
     align-items: center;
 }
 
-
+/* =========================
+   5. Button Component
+   ========================= */
 .btn {
     height: 40px;
     font-weight: 500;
@@ -564,6 +578,7 @@ START FRONTEND MENTOR FE PROJECTS SECTION
     display: flex;
     justify-content: end;
     gap: 0.5em;
+    margin: 2em 0 0 0;
 }
 
 .grid-switcher ion-icon {
@@ -574,6 +589,16 @@ START FRONTEND MENTOR FE PROJECTS SECTION
 
 .icon-selected {
     background-color: #0204181c;
+}
+
+.proj-li-card {
+    /* override styles to make it look like cards */
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    padding: 1em 2em 1em 2em;
+    border: var(--card-border);
+    box-shadow: var(--card-box-shadow);
+    backdrop-filter: var(--card-bg-filter);
 }
 
 .fe-project-list {
@@ -602,7 +627,6 @@ START FRONTEND MENTOR FE PROJECTS SECTION
 
 .fe-project-list li:not(:first-of-type):hover {
     background-color: #54597e0e;
-
 }
 
 .fe-link {
