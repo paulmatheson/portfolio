@@ -56,7 +56,7 @@ const projectsArr = [
     {
         title: "Wikipedia Viewer",
         description: "An app built to search wikipedia. Built as part of my freeCodeCamp coursework.",
-        link: "projects/wa/wiki/wikipedia-viewer.html",
+        link: "projects/wiki/wikipedia-viewer.html",
         type: "Web Application",
         tags: ["HTML/CSS", "JS", "API"],
         img: "",

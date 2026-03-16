@@ -1,5 +1,4 @@
 $(document).ready(function() {
-	$.backstretch("http://i.imgur.com/uqUAh3b.jpg");
 	$('#random-btn').click(function() {
 		window.open('https://en.wikipedia.org/wiki/Special:Random');
 	});
