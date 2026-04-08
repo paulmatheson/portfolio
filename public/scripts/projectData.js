@@ -10,6 +10,16 @@ const projectsArr = [
     target: "_self",
   },
   {
+    title: "Match Game",
+    description:
+      "A browser-based memory game where players flip cards to find matching pairs, tracking moves and score along the way.",
+    link: "https://glowing-crumble-23bfa4.netlify.app/",
+    type: "Game",
+    tags: ["HTML/CSS", "JS", "React", "Netlify"],
+    img: "",
+    target: "_blank",
+  },
+  {
     title: "Movie Database FE",
     description:
       "An app that displays popular movies using the The Movie Database (TMDB) API and allows users to add movies to their favorites using local storage. The app showcases clean and responsive UI design and is live on Netlify.",
