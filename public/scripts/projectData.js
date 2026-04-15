@@ -33,7 +33,7 @@ const projectsArr = [
     title: "Now Playing Component",
     description:
       "A lightweight web component that displays my currently playing (or recently played) track from Last.fm.",
-    link: "https://reactmovieprojectfav.netlify.app/",
+    link: "https://endearing-profiterole-e5ace9.netlify.app/",
     type: "Web Application",
     tags: ["HTML/CSS", "JS", "React", "Netlify", "API"],
     img: "",
