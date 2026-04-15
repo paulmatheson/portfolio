@@ -30,6 +30,16 @@ const projectsArr = [
     target: "_blank",
   },
   {
+    title: "Now Playing Component",
+    description:
+      "A lightweight web component that displays my currently playing (or recently played) track from Last.fm.",
+    link: "https://reactmovieprojectfav.netlify.app/",
+    type: "Web Application",
+    tags: ["HTML/CSS", "JS", "React", "Netlify", "API"],
+    img: "",
+    target: "_blank",
+  },
+  {
     title: "Days Left 365",
     description:
       "A fun and interactive app to let you know that time is slipping by.",
