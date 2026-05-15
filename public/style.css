@@ -492,6 +492,10 @@ article h5 {
         var(--glow)
 }
 
+.btn[hidden] {
+    display: none;
+}
+
 .btn i:hover {
     color: var(--btn-i-hover)
 }
@@ -927,6 +931,12 @@ START DESKTOP MEDIA QUERIES
 
 .grid {
     margin: 2em 0;
+}
+
+.gallery-actions {
+    display: flex;
+    justify-content: center;
+    margin: -0.5em 0 3em;
 }
 
 .grid-item {
