@@ -383,6 +383,16 @@ label:active:after {
     font-size: 1.5em;
 }
 
+.social-links a,
+.find-me-socials .btn {
+    transition: color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.social-links a:hover,
+.find-me-socials .btn:hover {
+    transform: translateY(-2px);
+}
+
 .projects {
     display: flex;
     flex-direction: column;
@@ -403,8 +413,16 @@ article {
     border: var(--card-border);
     box-shadow: var(--card-box-shadow);
     backdrop-filter: var(--card-bg-filter);
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
 }
 
+article:hover {
+    transform: translateY(-3px);
+}
+
+article img {
+    max-width: 100%;
+}
 
 article a {
     padding: 1em 0;
@@ -560,6 +578,20 @@ START ABOUT SECTION
     display: grid;
     grid-gap: 1em;
     margin: 1em 0 2em 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    article,
+    .social-links a,
+    .find-me-socials .btn {
+        transition: none;
+    }
+
+    article:hover,
+    .social-links a:hover,
+    .find-me-socials .btn:hover {
+        transform: none;
+    }
 }
 
 /******
