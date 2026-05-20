@@ -223,8 +223,9 @@ label:active:after {
   font-size: 1.2em;
 }
 
-#photo-stat {
+.photo-stat {
   font-size: 20px;
+  font-weight: 600;
   font-family:
     "Chivo", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   color: var(--font-color);
