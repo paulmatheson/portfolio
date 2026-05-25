@@ -1,0 +1,27 @@
+.photo-stat {
+  font-size: 20px;
+  font-weight: 600;
+  font-family:
+    "Chivo", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: var(--font-color);
+}
+
+.grid {
+  margin: 2em 0;
+}
+
+.gallery-actions {
+  display: flex;
+  justify-content: center;
+  margin: -0.5em 0 3em;
+}
+
+.grid-item {
+  width: 20%;
+  min-width: 150px;
+}
+
+.grid-item img {
+  width: 100%;
+  height: auto;
+}
