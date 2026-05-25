@@ -1,0 +1,49 @@
+.about-main {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.about-main img {
+  max-width: 100%;
+  border-radius: 15px;
+  margin-top: 1em;
+}
+
+.about-main blockquote {
+  line-height: 162.5%;
+  border-left: var(--border-footer);
+  margin: 2em 0 0 0;
+  padding: 0 2em;
+  font-style: italic;
+  font-weight: 100;
+  font-family: "IBM Plex Mono";
+  font-size: 0.8em;
+}
+
+.about-main div:last-of-type {
+  display: grid;
+}
+
+.about-main div:last-of-type div {
+  grid-area: 1;
+}
+
+.about-main ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1.2em;
+  font-size: 0.8em;
+  font-family: "IBM Plex Mono", "Courier New", Courier, monospace;
+}
+
+@media (min-width: 768px) {
+  .about-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 6em;
+  }
+
+  .about-main div:last-of-type div {
+    grid-area: 3;
+  }
+}
