@@ -25,12 +25,6 @@ menuButton.addEventListener("click", () => {
   menuAnimation(menuButton);
 });
 
-// Set the initial theme based on local storage
-const savedTheme = localStorage.getItem("theme");
-if (savedTheme) {
-  document.documentElement.setAttribute("data-theme", savedTheme);
-}
-
 renderProjects(projectsArr, hmProjList, projectList);
 
 function canAnimate() {
