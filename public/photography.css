@@ -7,6 +7,7 @@
 }
 
 .grid {
+  width: 100%;
   margin: 2em 0;
 }
 
@@ -17,11 +18,40 @@
 }
 
 .grid-item {
-  width: 20%;
-  min-width: 150px;
+  width: 100%;
+  min-width: 0;
 }
 
 .grid-item img {
   width: 100%;
   height: auto;
+}
+
+@media (min-width: 640px) {
+  .grid-item {
+    width: 48%;
+  }
+}
+
+@media (min-width: 900px) {
+  .grid {
+    width: min(calc(100vw - 3rem), 1440px);
+    margin: 3em 0;
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .grid-item {
+    width: 32%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .grid {
+    width: min(calc(100vw - 4rem), 1560px);
+  }
+
+  .grid-item {
+    width: 24%;
+  }
 }
