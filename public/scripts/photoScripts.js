@@ -1,5 +1,11 @@
 const GALLERY_BATCH_SIZE = 10;
 
+const escapeAttr = (value) =>
+  String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/"/g, "&quot;")
+    .replace(/</g, "&lt;");
+
 async function init() {
   try {
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -30,8 +36,8 @@ async function init() {
     let galleryLightbox;
 
     const getPhotoMarkup = (photo) => `
-      <a class="grid-item" data-src="${photo.fullUrl}"${window.gsap && !reducedMotion ? ' style="opacity: 0; transform: translateY(18px);"' : ""}>
-        <img src="${photo.thumbUrl}" loading="lazy" alt="${photo.alt || "photo"}" />
+      <a class="grid-item" data-src="${photo.fullUrl}" data-sub-html="${escapeAttr(photo.title || "photo")}"${window.gsap && !reducedMotion ? ' style="opacity: 0; transform: translateY(18px);"' : ""}>
+        <img src="${photo.thumbUrl}" loading="lazy" alt="${escapeAttr(photo.alt || "photo")}" />
       </a>
     `;
 

@@ -25,6 +25,7 @@ exports.handler = async () => {
     const params = new URLSearchParams({
       asset_folder: PHOTO_FOLDER,
       max_results: "100",
+      context: "true",
     });
 
     const response = await fetch(
@@ -51,7 +52,8 @@ exports.handler = async () => {
     const photos = data.resources.map((photo) => ({
       fullUrl: `https://res.cloudinary.com/${cloudName}/image/upload/${GALLERY_FULL_TRANSFORM}/${photo.public_id}`,
       thumbUrl: `https://res.cloudinary.com/${cloudName}/image/upload/${GALLERY_THUMB_TRANSFORM}/${photo.public_id}`,
-      alt: photo.display_name || photo.public_id,
+      title: photo.display_name || photo.public_id,
+      alt: photo.context?.custom?.alt || photo.display_name || photo.public_id,
     }));
 
     return {
