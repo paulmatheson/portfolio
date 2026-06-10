@@ -8,12 +8,17 @@ const escapeAttr = (value) =>
 
 async function init() {
   try {
-    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const reducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
     const response = await fetch("/.netlify/functions/getPhotos");
     const photos = await response.json();
+    console.log(photos[0]);
 
     if (!response.ok) {
-      throw new Error(photos.error || `Photo request failed with ${response.status}`);
+      throw new Error(
+        photos.error || `Photo request failed with ${response.status}`,
+      );
     }
 
     if (!Array.isArray(photos)) {
@@ -65,17 +70,25 @@ async function init() {
     const appendNextPhotos = () => {
       if (!galleryLayout) return;
 
-      const nextPhotos = photos.slice(visiblePhotoCount, visiblePhotoCount + GALLERY_BATCH_SIZE);
+      const nextPhotos = photos.slice(
+        visiblePhotoCount,
+        visiblePhotoCount + GALLERY_BATCH_SIZE,
+      );
       if (!nextPhotos.length) return;
 
       if (loadMoreButton) {
         loadMoreButton.disabled = true;
       }
 
-      grid.insertAdjacentHTML("beforeend", nextPhotos.map(getPhotoMarkup).join(""));
+      grid.insertAdjacentHTML(
+        "beforeend",
+        nextPhotos.map(getPhotoMarkup).join(""),
+      );
       visiblePhotoCount += nextPhotos.length;
 
-      const newItems = Array.from(grid.querySelectorAll(".grid-item")).slice(-nextPhotos.length);
+      const newItems = Array.from(grid.querySelectorAll(".grid-item")).slice(
+        -nextPhotos.length,
+      );
 
       imagesLoaded(newItems, () => {
         galleryLayout.appended(newItems);
@@ -86,7 +99,10 @@ async function init() {
       });
     };
 
-    grid.innerHTML = photos.slice(0, visiblePhotoCount).map(getPhotoMarkup).join("");
+    grid.innerHTML = photos
+      .slice(0, visiblePhotoCount)
+      .map(getPhotoMarkup)
+      .join("");
 
     imagesLoaded(grid, () => {
       galleryLayout = new Isotope(grid, {
@@ -119,19 +135,26 @@ async function init() {
 }
 
 function animatePageIntro() {
-  if (!window.gsap || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  if (
+    !window.gsap ||
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  ) {
     return;
   }
 
   gsap
     .timeline({ defaults: { ease: "power2.out" } })
     .from("main h1", { opacity: 0, y: 12, duration: 0.45 })
-    .from("main section:first-child p", {
-      opacity: 0,
-      y: 10,
-      duration: 0.35,
-      stagger: 0.08,
-    }, "-=0.2");
+    .from(
+      "main section:first-child p",
+      {
+        opacity: 0,
+        y: 10,
+        duration: 0.35,
+        stagger: 0.08,
+      },
+      "-=0.2",
+    );
 }
 
 async function updateUnsplashStats() {
