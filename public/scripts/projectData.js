@@ -40,16 +40,6 @@ const projectsArr = [
     target: "_blank",
   },
   {
-    title: "BMI Calculator",
-    description:
-      "An app that allows the user to calculate their BMI based on height and weight",
-    link: "https://flourishing-malasada-91da14.netlify.app/",
-    type: "Web Application",
-    tags: ["HTML/CSS", "React", "JS", "Netlify", "App design"],
-    img: "",
-    target: "_blank",
-  },
-  {
     title: "Days Left 365",
     description:
       "A fun and interactive app to let you know that time is slipping by.",
