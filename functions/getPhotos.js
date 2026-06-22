@@ -5,7 +5,8 @@ const GALLERY_THUMB_TRANSFORM = "c_limit,w_600/q_auto/f_auto";
 const GALLERY_FULL_TRANSFORM = "c_limit,w_2000/q_auto/f_auto";
 const CACHE_HEADERS = {
   "Cache-Control": "public, max-age=300",
-  "Netlify-CDN-Cache-Control": "public, max-age=3600, stale-while-revalidate=86400",
+  "Netlify-CDN-Cache-Control":
+    "public, max-age=3600, stale-while-revalidate=86400",
 };
 
 exports.handler = async () => {
@@ -52,7 +53,8 @@ exports.handler = async () => {
     const photos = data.resources.map((photo) => ({
       fullUrl: `https://res.cloudinary.com/${cloudName}/image/upload/${GALLERY_FULL_TRANSFORM}/${photo.public_id}`,
       thumbUrl: `https://res.cloudinary.com/${cloudName}/image/upload/${GALLERY_THUMB_TRANSFORM}/${photo.public_id}`,
-      title: photo.display_name || photo.public_id,
+      title:
+        photo.context?.custom?.caption || photo.display_name || photo.public_id,
       alt: photo.context?.custom?.alt || photo.display_name || photo.public_id,
     }));
 
