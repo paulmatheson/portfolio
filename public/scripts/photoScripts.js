@@ -65,6 +65,16 @@ async function init() {
       });
     };
 
+    const revealInitialItems = () => {
+      if (!window.gsap || reducedMotion) return;
+
+      galleryLayout.once("layoutComplete", () => {
+        revealItems(grid.querySelectorAll(".grid-item"));
+      });
+
+      galleryLayout.layout();
+    };
+
     const appendNextPhotos = () => {
       if (!galleryLayout) return;
 
@@ -88,15 +98,22 @@ async function init() {
         -nextPhotos.length,
       );
 
-      imagesLoaded(newItems, () => {
-        galleryLayout.once("layoutComplete", () => {
-          galleryLightbox?.refresh();
-          revealItems(newItems);
-          updateLoadMoreButton();
+      galleryLayout.appended(newItems);
+      galleryLayout.layout();
+
+      imagesLoaded(newItems)
+        .on("progress", () => {
+          galleryLayout.layout();
+        })
+        .on("always", () => {
+          galleryLayout.once("layoutComplete", () => {
+            galleryLightbox?.refresh();
+            revealItems(newItems);
+            updateLoadMoreButton();
+          });
+
+          galleryLayout.layout();
         });
-        galleryLayout.appended(newItems);
-        galleryLayout.layout();
-      });
     };
 
     grid.innerHTML = photos
@@ -104,31 +121,30 @@ async function init() {
       .map(getPhotoMarkup)
       .join("");
 
-    imagesLoaded(grid, () => {
-      galleryLayout = new Isotope(grid, {
-        itemSelector: ".grid-item",
-        layoutMode: "masonry",
-        masonry: { gutter: 10 },
-      });
-
-      galleryLightbox = lightGallery(grid, {
-        controls: true,
-        counter: false,
-        download: false,
-        thumbnail: true,
-        plugins: [lgThumbnail],
-      });
-
-      if (window.gsap && !reducedMotion) {
-        galleryLayout.once("layoutComplete", () => {
-          revealItems(grid.querySelectorAll(".grid-item"));
-        });
-        galleryLayout.layout();
-      }
-
-      loadMoreButton?.addEventListener("click", appendNextPhotos);
-      updateLoadMoreButton();
+    galleryLayout = new Isotope(grid, {
+      itemSelector: ".grid-item",
+      layoutMode: "masonry",
+      masonry: { gutter: 24 },
     });
+
+    galleryLightbox = lightGallery(grid, {
+      controls: true,
+      counter: false,
+      download: false,
+      thumbnail: true,
+      plugins: [lgThumbnail],
+    });
+
+    imagesLoaded(grid)
+      .on("progress", () => {
+        galleryLayout.layout();
+      })
+      .on("always", () => {
+        revealInitialItems();
+      });
+
+    loadMoreButton?.addEventListener("click", appendNextPhotos);
+    updateLoadMoreButton();
   } catch (error) {
     console.error("Error loading Cloudinary photos:", error.message);
   }

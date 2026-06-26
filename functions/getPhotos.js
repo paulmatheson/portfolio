@@ -53,6 +53,8 @@ exports.handler = async () => {
     const photos = data.resources.map((photo) => ({
       fullUrl: `https://res.cloudinary.com/${cloudName}/image/upload/${GALLERY_FULL_TRANSFORM}/${photo.public_id}`,
       thumbUrl: `https://res.cloudinary.com/${cloudName}/image/upload/${GALLERY_THUMB_TRANSFORM}/${photo.public_id}`,
+      width: photo.width,
+      height: photo.height,
       title:
         photo.context?.custom?.caption || photo.display_name || photo.public_id,
       alt: photo.context?.custom?.alt || photo.display_name || photo.public_id,

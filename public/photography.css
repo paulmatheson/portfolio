@@ -18,18 +18,22 @@
 }
 
 .grid-item {
-  width: 100%;
+  width: calc(50% - 16px);
   min-width: 0;
+  margin-bottom: 16px;
 }
 
 .grid-item img {
+  display: block;
   width: 100%;
   height: auto;
 }
 
+/* Tablet and Desktop */
 @media (min-width: 640px) {
   .grid-item {
-    width: 48%;
+    width: calc(33.333% - 21px);
+    margin-bottom: 24px;
   }
 }
 
@@ -42,16 +46,21 @@
   }
 
   .grid-item {
-    width: 32%;
+    width: calc(25% - 24px);
+    margin-bottom: 24px;
   }
 }
 
+/* Wide Desktop */
 @media (min-width: 1200px) {
-  .grid {
-    width: min(calc(100vw - 4rem), 1560px);
+  .photo-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .grid-item {
-    width: 24%;
+    width: calc(25% - 24px);
+    margin-bottom: 24px;
   }
 }
