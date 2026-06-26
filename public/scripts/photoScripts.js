@@ -13,7 +13,6 @@ async function init() {
     ).matches;
     const response = await fetch("/.netlify/functions/getPhotos");
     const photos = await response.json();
-    console.log(photos[0]);
 
     if (!response.ok) {
       throw new Error(
@@ -41,7 +40,7 @@ async function init() {
     let galleryLightbox;
 
     const getPhotoMarkup = (photo) => `
-      <a class="grid-item" data-src="${photo.fullUrl}" data-sub-html="${escapeAttr(photo.title || "photo")}"${window.gsap && !reducedMotion ? ' style="opacity: 0; transform: translateY(18px);"' : ""}>
+      <a class="grid-item" data-src="${photo.fullUrl}" data-sub-html="${escapeAttr(photo.title || "photo")}"${window.gsap && !reducedMotion ? ' style="opacity: 0;"' : ""}>
         <img src="${photo.thumbUrl}" loading="lazy" alt="${escapeAttr(photo.alt || "photo")}" />
       </a>
     `;
@@ -59,11 +58,10 @@ async function init() {
 
       gsap.to(items, {
         opacity: 1,
-        y: 0,
-        duration: 0.55,
-        stagger: 0.05,
-        ease: "power2.out",
-        clearProps: "opacity,transform",
+        duration: 0.35,
+        stagger: 0.03,
+        ease: "power1.out",
+        clearProps: "opacity",
       });
     };
 
@@ -91,11 +89,13 @@ async function init() {
       );
 
       imagesLoaded(newItems, () => {
+        galleryLayout.once("layoutComplete", () => {
+          galleryLightbox?.refresh();
+          revealItems(newItems);
+          updateLoadMoreButton();
+        });
         galleryLayout.appended(newItems);
         galleryLayout.layout();
-        galleryLightbox?.refresh();
-        revealItems(newItems);
-        updateLoadMoreButton();
       });
     };
 
@@ -174,5 +174,5 @@ async function updateUnsplashStats() {
 
 animatePageIntro();
 init();
-requestIdleCallback?.(() => updateUnsplashStats()) ??
+window.requestIdleCallback?.(() => updateUnsplashStats()) ??
   setTimeout(updateUnsplashStats, 0);
