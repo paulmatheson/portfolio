@@ -10,18 +10,24 @@
         if (savedTheme) {
             document.documentElement.setAttribute("data-theme", savedTheme);
         }
+        if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            document.documentElement.setAttribute("data-intro-boot", "");
+            window.setTimeout(function () {
+                document.documentElement.removeAttribute("data-intro-boot");
+            }, 2000);
+        }
     </script>
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body data-page-intro="pending">
     <nav>
-        <a href="index.html">
+        <a href="index.html" data-intro>
             <div id="logo"></div>
             <span>Paul Matheson</span>
         </a>
 
-        <div class="menu-button" id="menu-button">
+        <div class="menu-button" id="menu-button" data-intro>
             <div class="bar1"></div>
             <div class="bar2"></div>
             <div class="bar3"></div>
@@ -69,7 +75,7 @@
             </div>
         </div>
         <div class="header-nav">
-            <ul class="nav-links">
+            <ul class="nav-links" data-intro-controls>
                 <li><a href="about.html">About</a></li>
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="https://photos.paulmatheson.net" target="_blank" rel="noopener">Photos <ion-icon
@@ -86,8 +92,8 @@
         <section class="projects-main">
 
 
-            <h1>Projects</h1>
-            <div id="project-list" class="project-cards">
+            <h1 data-intro>Projects</h1>
+            <div id="project-list" class="project-cards" data-intro-group>
 
             </div>
 
@@ -95,8 +101,8 @@
         </section>
 
         <section>
-            <h3>Other places you can find me</h2>
-                <ul class="social-links">
+            <h3 data-intro>Other places you can find me</h2>
+                <ul class="social-links" data-intro-group>
                     <li>
                         <a href="https://github.com/paulmatheson" target="_blank">
                             <ion-icon name="logo-github"></ion-icon>
@@ -126,10 +132,9 @@
         </section>
 
     </main>
-    <footer>
+    <footer data-intro>
         © 2026 | Designed & coded by Paul Matheson
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
     <script type="module" src="scripts/main.js"></script>
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>

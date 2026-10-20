@@ -445,6 +445,10 @@ p {
   margin: 1em 0 2em 0;
 }
 
+:root[data-intro-boot] [data-page-intro="pending"] :is([data-intro], [data-intro-group] > *, [data-intro-controls] > *) {
+  opacity: 0;
+}
+
 @media (prefers-reduced-motion: reduce) {
   article,
   .social-links a,

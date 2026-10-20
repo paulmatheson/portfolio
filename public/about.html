@@ -10,6 +10,12 @@
         if (savedTheme) {
             document.documentElement.setAttribute("data-theme", savedTheme);
         }
+        if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            document.documentElement.setAttribute("data-intro-boot", "");
+            window.setTimeout(function () {
+                document.documentElement.removeAttribute("data-intro-boot");
+            }, 2000);
+        }
     </script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="about.css">
@@ -18,14 +24,14 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body>
+<body data-page-intro="pending">
     <nav>
-        <a href="index.html">
+        <a href="index.html" data-intro>
             <div id="logo"></div>
             <span>Paul Matheson</span>
         </a>
 
-        <div class="menu-button" id="menu-button">
+        <div class="menu-button" id="menu-button" data-intro>
             <div class="bar1"></div>
             <div class="bar2"></div>
             <div class="bar3"></div>
@@ -73,7 +79,7 @@
             </div>
         </div>
         <div class="header-nav">
-            <ul class="nav-links">
+            <ul class="nav-links" data-intro-controls>
                 <li><a href="about.html">About</a></li>
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="https://photos.paulmatheson.net" target="_blank" rel="noopener">Photos <ion-icon
@@ -89,8 +95,8 @@
     <main>
         <section class="about-main">
             <div>
-                <h1>About me</h1>
-                <p>
+                <h1 data-intro>About me</h1>
+                <p data-intro>
                     I'm a project manager, web designer and developer based in Seattle, WA with over 5 years of
                     experience building for
                     the web and a lifetime
@@ -102,19 +108,19 @@
                     the admin to a few
                     online forums.
                 </p>
-                <p>
+                <p data-intro>
                     As I grew older, I became
                     self-taught and proficient in HTML, CSS, and Javascript. One of my first jobs was as a repair
                     technician, fixing mostly iPhones and MacBooks where I continued to hone my technical and problem
                     solving skills, earning several certifications before taking up my current position as a PM.
                 </p>
-                <p>
+                <p data-intro>
                     As a developer with an eye for good design, I have a passion for creating beautiful websites and
                     collaborating with others to envision digital spaces that exceed the needs of the client. I've
                     worked with clients like <a href="http://www.seattledancecollective.org" target="blank">Seattle
                         Dance Collective</a>, <a href="https://www.soundpropertymg.com/" target="blank">Sound Property
                         Management</a> and iDope Customs.</p>
-                <p>
+                <p data-intro>
                     In my current work as a project manager, I’ve had
                     the privilege of working with marketing, content strategists, writers, UX designers, and business
                     development teams, working closely with all the moving parts of a large business. I've developed a
@@ -125,9 +131,9 @@
 
             </div>
             <div>
-                <img src="images/about-me.png" />
+                <img src="images/about-me.png" data-intro />
 
-                <blockquote>
+                <blockquote data-intro>
                     <i class="fa-solid fa-quote-left"></i>
                     Paul is a highly strategic, collaborative, proactive and innovative design thinker who continually
                     finds ways to improve and automate our processes, freeing up our team’s capacity to focus on
@@ -135,10 +141,10 @@
                     questions is a key ingredient to his success and the success of our team.
                 </blockquote>
                 <div>
-                    <h4>
+                    <h4 data-intro>
                         Here are a few technologies I’m familiar with (or have recently worked with)
                     </h4>
-                    <ul>
+                    <ul data-intro-group>
                         <li>Javascript (ES6+)</li>
                         <li>React</li>
                         <li>Power Apps</li>
@@ -154,9 +160,9 @@
 
         </section>
         <section class="interests">
-            <h2>Other Interests</h2>
+            <h2 data-intro>Other Interests</h2>
 
-            <p>
+            <p data-intro>
                 When I’m not in front of a computer, I try to spend as much time outside as possible. I post photos on
                 Instagram and sometimes do write ups on my blog. I’m keenly interested in
                 photography and music production (stemming from the aforementioned beatboxing). I've collaborated with
@@ -171,8 +177,8 @@
                 time, I love playing video games, taking care of my house
                 plants, writing, and finding new bars and restaurants to try with my wife and friends.
             </p>
-            <h4>Find me on</h4>
-            <ul class=find-me-socials>
+            <h4 data-intro>Find me on</h4>
+            <ul class="find-me-socials" data-intro-group>
                 <li>
                     <a class="btn" href="https://soundcloud.com/illpill" target="_blank">
                         <i class="fa-brands fa-soundcloud"></i>
@@ -203,17 +209,16 @@
                     </a>
                 </li>
             </ul>
-            <p>
+            <p data-intro>
                 I'm working on an interative yet light-weight approach to my portfolio. There is much more planned for
                 this site so stay tuned 😎
             </p>
         </section>
 
     </main>
-    <footer>
+    <footer data-intro>
         © 2026 | Designed & coded by Paul Matheson
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
     <script type="module" src="scripts/main.js"></script>
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
