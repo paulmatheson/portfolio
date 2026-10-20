@@ -35,6 +35,7 @@
   --glow:
     1px 1px 0 #1d875700, 0 0 20px 5px #c0ffe400, inset 2px 2px 0 #d3ffec00;
   --nav-link-color: #666;
+  --page-base: hsl(240, 25%, 98%);
 }
 
 [data-theme="dark"] {
@@ -64,6 +65,7 @@
     1px 1px 0 #ff474d1f, 1px 1px 30px 5px rgba(179, 32, 66, 0.38),
     inset 0px 0px 14px #95292d;
   --nav-link-color: #ffffffd6;
+  --page-base: #020418;
 }
 
 /* =========================
@@ -166,39 +168,49 @@ nav input[type="checkbox"] {
 /* START TOGGLE NAVIGATION */
 /***************************/
 
-.bring-forward {
-  z-index: 99;
-}
-
-.bring-backward {
-  z-index: -1;
-}
-
 .sidebar {
   position: fixed;
-  top: 0;
-  height: 0;
-  width: 100vw;
-  background-color: var(--bg-color);
-  font-size: 1.825em;
+  inset: 0;
+  z-index: 90;
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
   align-items: center;
+  justify-content: center;
+  background-color: var(--page-base);
+  background-image: var(--bg-gradient);
+  font-size: 1.825em;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 0.22s cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 0s linear 0.22s;
+}
+
+.sidebar.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition:
+    opacity 0.22s cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 0s linear 0s;
+}
+
+body.no-scroll > nav > a {
+  visibility: hidden;
 }
 
 .sidebar-links {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.8em;
-  opacity: 0;
-  height: 80%;
+  gap: 1.15em;
+  width: min(100%, 22rem);
+  padding: 4.5rem 1.5rem 2rem;
 }
 
-.fade-in {
-  opacity: 1;
-  transition: 1s;
+.sidebar-links > a {
+  font-weight: 400;
+  letter-spacing: -0.02em;
 }
 
 .sidebar ul {
@@ -206,18 +218,8 @@ nav input[type="checkbox"] {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 1.4em;
-}
-
-.navSlide {
-  animation: slide 0.3s linear forwards;
-  left: 0;
-}
-
-@keyframes slide {
-  100% {
-    height: 100vh;
-  }
+  gap: 1.15em;
+  margin-top: 0.35em;
 }
 
 .nav-links a {
@@ -226,28 +228,43 @@ nav input[type="checkbox"] {
 
 .menu-button {
   position: absolute;
-  right: 2em;
-  top: 1.2em;
+  right: 0.6em;
+  top: 0.7em;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
   cursor: pointer;
   z-index: 100;
+}
+
+.menu-button:focus-visible {
+  outline: 2px solid var(--font-bold);
+  outline-offset: 3px;
+  border-radius: 8px;
 }
 
 .bar1,
 .bar2,
 .bar3 {
-  width: 30px;
-  height: 2px;
+  width: 22px;
+  height: 1.5px;
   background-color: var(--font-faded);
-  margin: 4px 0;
-  transition: 0.3s;
   border-radius: 5px;
+  transition:
+    transform 0.36s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.2s ease;
 }
 
 .change .bar1 {
-  transform: rotate(-45deg) translate(-10px, 8px);
+  transform: translateY(7.5px) rotate(45deg);
 }
 
 .change .bar2 {
@@ -255,7 +272,7 @@ nav input[type="checkbox"] {
 }
 
 .change .bar3 {
-  transform: rotate(45deg) translate(-6px, -4px);
+  transform: translateY(-7.5px) rotate(-45deg);
 }
 
 .nav-links {
@@ -263,9 +280,7 @@ nav input[type="checkbox"] {
 }
 
 .no-scroll {
-  height: 100vh;
-  overflow-y: hidden;
-  padding-right: 15px;
+  overflow: hidden;
 }
 
 /***************************/
@@ -452,7 +467,11 @@ p {
 @media (prefers-reduced-motion: reduce) {
   article,
   .social-links a,
-  .find-me-socials .btn {
+  .find-me-socials .btn,
+  .sidebar,
+  .bar1,
+  .bar2,
+  .bar3 {
     transition: none;
   }
 
