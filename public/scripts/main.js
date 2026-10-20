@@ -1,7 +1,7 @@
 import projectsArr from "./projectData.js";
 import { renderProjects } from "./projectRenderer.js";
 import { switchTheme } from "./themeSwitch.js";
-import { menuAnimation } from "./menuAnimation.js";
+import { initMenu } from "./menuAnimation.js?v=2";
 import "./pageIntro.js";
 
 const hmProjList = document.getElementById("hm-project-cards");
@@ -22,8 +22,6 @@ toggleLinks.forEach((link) => {
   });
 });
 
-menuButton.addEventListener("click", () => {
-  menuAnimation(menuButton);
-});
+initMenu(menuButton);
 
 renderProjects(projectsArr, hmProjList, projectList);

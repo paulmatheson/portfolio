@@ -27,13 +27,14 @@
             <span>Paul Matheson</span>
         </a>
 
-        <div class="menu-button" id="menu-button" data-intro>
-            <div class="bar1"></div>
-            <div class="bar2"></div>
-            <div class="bar3"></div>
-        </div>
+        <button class="menu-button" id="menu-button" type="button" data-intro aria-expanded="false"
+            aria-controls="slideNav" aria-label="Menu">
+            <span class="bar1"></span>
+            <span class="bar2"></span>
+            <span class="bar3"></span>
+        </button>
 
-        <div class="sidebar bring-backward" id="slideNav">
+        <div class="sidebar" id="slideNav" role="dialog" aria-modal="true" aria-label="Menu">
             <div class="sidebar-links" id="sidebar-links">
                 <a href="index.html" class="item">Home</a>
                 <a href="about.html" class="item">About</a>
@@ -135,7 +136,7 @@
     <footer data-intro>
         © 2026 | Designed & coded by Paul Matheson
     </footer>
-    <script type="module" src="scripts/main.js"></script>
+    <script type="module" src="scripts/main.js?v=2"></script>
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
