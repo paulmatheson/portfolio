@@ -1,6 +1,6 @@
 import projectsArr from "./projectData.js";
 import { renderProjects } from "./projectRenderer.js";
-import { switchTheme } from "./themeSwitch.js";
+import { switchTheme } from "./themeSwitch.js?v=2";
 import { initMenu } from "./menuAnimation.js?v=2";
 import "./pageIntro.js";
 
