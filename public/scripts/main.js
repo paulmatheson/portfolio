@@ -3,6 +3,7 @@ import { renderProjects } from "./projectRenderer.js";
 import { switchTheme } from "./themeSwitch.js?v=2";
 import { initMenu } from "./menuAnimation.js?v=2";
 import "./pageIntro.js";
+import "./nowPlaying.js";
 
 const hmProjList = document.getElementById("hm-project-cards");
 const projectList = document.getElementById("project-list");
